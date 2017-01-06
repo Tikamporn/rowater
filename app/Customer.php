@@ -14,6 +14,10 @@ class Customer extends Model
         return $this->belongsTo(Group::class);
     }
 
+    public function Team(){
+        return $this->belongsTo(Team::class);
+    }
+
     public function Product(){
     	return $this->belongsToMany(Product::class)->withPivot('customer_id','product_id','amount','id')->withTimestamps();
     }

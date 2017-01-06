@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
 	public function User(){
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class)->withPivot('role')->withTimestamps();
     }
+
     public function Zone(){
-        return $this->hasMany(Zone::class);
+        return $this->belongsToMany(Zone::class)->withTimestamps();
     }
 }

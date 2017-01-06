@@ -54,10 +54,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'rowater.ddns.net',
+            'host'      => 'localhost',
             'database'  => 'rowater',
-            'username'  => 'rowater',
-            'password'  => 'Palm^5617',
+            'username'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Customer;
 use App\Team;
+use App\Group;
+use App\Zone;
 use Auth;
 
 class CustomerController extends Controller
@@ -24,12 +26,18 @@ class CustomerController extends Controller
 
     public function index(){
     	$customer = Customer::All();
-    	return view('customer.show',compact('customer'));
+        $vat = Customer::where('vat','yes')->get();
+        $novat = Customer::where('vat','no')->get();
+    	return view('customer.show',compact('customer','vat','novat'));
     }
 
     public function create(){
         if(\Auth::check() && \Auth::user()->level != 'user') {
-            return view('customer.create');
+            $zone = Zone::All();
+            $team = Team::All();
+            $group = Group::All();
+            $customer = Customer::max('id');
+            return view('customer.create',compact('zone','team','group','customer'));
         }else{
             return redirect('customer/');
         }
@@ -40,14 +48,23 @@ class CustomerController extends Controller
         if(\Auth::check() && \Auth::user()->level != 'user') {
         	$customer = new Customer;
         	$customer->name = Input::get('name');
-        	$customer->address = Input::get('address');
+            $customer->addr_no = Input::get('addr_no');
+            $customer->addr_village = Input::get('addr_village');
+            $customer->addr_village_no = Input::get('addr_village_no');
+            $customer->addr_soi = Input::get('addr_soi');
+            $customer->addr_subdistrict = Input::get('addr_subdistrict');
+            $customer->addr_district = Input::get('addr_district');
+            $customer->addr_road = Input::get('addr_road');
+            $customer->addr_province = Input::get('addr_province');
+        	$customer->addr_postcode = Input::get('addr_postcode');
         	$customer->tel = Input::get('tel');
         	$customer->zone_id = Input::get('zone');
         	$customer->group_id = Input::get('group');
+            $customer->team_id = Input::get('team');
             $customer->price = Input::get('price');
-            $customer->amount = Input::get('amount');
-            $customer->lat = Input::get('lat');
-            $customer->long = Input::get('long');
+            $customer->deposit_unit = Input::get('unit');
+            $customer->lat = Input::get('latitude');
+            $customer->long = Input::get('longtitude');
         	$customer->vat = Input::get('vat');
         	$customer->type = Input::get('type');
         	$customer->save();
@@ -73,6 +90,7 @@ class CustomerController extends Controller
             $customer->name = Input::get('name');
             $customer->address = Input::get('address');
             $customer->tel = Input::get('tel');
+            $customer->pin = Input::get('tel');
             $customer->zone_id = Input::get('zone');
             $customer->group_id = Input::get('group');
             $customer->price = Input::get('price');

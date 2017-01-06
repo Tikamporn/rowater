@@ -56,6 +56,7 @@ Route::group(['middleware' => 'web'], function () {
 	    Route::post('/mobile/getuser','MobileController@getUser');
 	 // team
 	    Route::get('/team/','TeamController@index');
+	    Route::get('/team/member/{id}','TeamController@member');
 	 // business
 	    Route::get('/purchase/','BusinessController@show');
 	    Route::get('/sales/','BusinessController@create');

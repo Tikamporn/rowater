@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CreateAddressesTable' => $baseDir . '/database/migrations/2017_01_04_213556_create_addresses_table.php',
     'CreateCustomerTable' => $baseDir . '/database/migrations/2016_04_12_161033_create_customer_table.php',
     'CreateCustomerrequestsTable' => $baseDir . '/database/migrations/2016_11_23_051122_create_customerrequests_table.php',
     'CreateExpenseTable' => $baseDir . '/database/migrations/2016_04_09_142341_create_expense_table.php',
@@ -13,8 +14,8 @@ return array(
     'CreateLogsTable' => $baseDir . '/database/migrations/2016_09_21_143011_create_purchases_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2016_04_12_100000_create_password_resets_table.php',
     'CreateProductsTable' => $baseDir . '/database/migrations/2016_08_25_153549_create-products-table.php',
-    'CreateRequestsTable' => $baseDir . '/database/migrations/2016_11_23_043127_create_requests_table.php',
     'CreateTeamTable' => $baseDir . '/database/migrations/2016_04_04_172130_create_team_table.php',
+    'CreateTeamzoneTable' => $baseDir . '/database/migrations/2017_01_05_213036_create_teamzone_table.php',
     'CreateTransactionTable' => $baseDir . '/database/migrations/2016_04_04_172445_create_transaction_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2016_04_12_000000_create_users_table.php',
     'CreateZoneTable' => $baseDir . '/database/migrations/2016_04_04_172446_create_zone_table.php',

@@ -25,6 +25,6 @@ class User extends Authenticatable
     ];
 
     public function Team(){
-        return $this->belongsTo(Team::class);
+        return $this->belongsToMany(Team::class)->withPivot('role')->withTimestamps();
     }
 }

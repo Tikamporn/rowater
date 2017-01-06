@@ -253,6 +253,7 @@ class ComposerStaticInitfd34cbf2f2743822e413346e1648f4a9
     );
 
     public static $classMap = array (
+        'CreateAddressesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_04_213556_create_addresses_table.php',
         'CreateCustomerTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_12_161033_create_customer_table.php',
         'CreateCustomerrequestsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_051122_create_customerrequests_table.php',
         'CreateExpenseTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_09_142341_create_expense_table.php',
@@ -260,8 +261,8 @@ class ComposerStaticInitfd34cbf2f2743822e413346e1648f4a9
         'CreateLogsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_21_143011_create_purchases_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_12_100000_create_password_resets_table.php',
         'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_25_153549_create-products-table.php',
-        'CreateRequestsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_043127_create_requests_table.php',
         'CreateTeamTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_04_172130_create_team_table.php',
+        'CreateTeamzoneTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_05_213036_create_teamzone_table.php',
         'CreateTransactionTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_04_172445_create_transaction_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_12_000000_create_users_table.php',
         'CreateZoneTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_04_172446_create_zone_table.php',

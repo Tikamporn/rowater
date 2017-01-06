@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
-use App\Zone;
 use App\Team;
 use Auth;
 
@@ -23,7 +22,12 @@ class TeamController extends Controller
     }
 
     public function index() {
-    	$zone = Zone::All();
-    	return view('team.show',compact('zone'));
+    	$team = Team::All();
+    	return view('team.show',compact('team'));
+    }
+
+    public function member($id) {
+    	$team = Team::where('id',$id)->get();
+    	return view('team.member',compact('team'));
     }
 }
