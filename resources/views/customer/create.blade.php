@@ -94,13 +94,7 @@
 
                       <tr>
                           <td class="w3-right">Vat :</td>
-                          <td>
-							<select class="w3-select w3-border w3-round w3-left" name="vat">
-								<option value="no">No</option>
-								<option value="yes">Yes</option>
-							</select>
-                          </td>
-
+                          <td><input class="w3-border w3-round w3-input w3-left" name="vat" type="number"></td></td>
                           <td class="w3-right">Ship Number :</td>
                           <td ><input class="w3-border w3-round w3-input w3-left" name="shipnumber" type="text"></td>
                       </tr>
@@ -110,7 +104,7 @@
                           <td><input class="w3-border w3-round w3-input w3-left" name="latitude" type="text"></td>
 
                           <td class="w3-right">Longitude :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="longitude" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="longtitude" type="text"></td>
                       </tr>
 					</table>
 					<br>
@@ -146,12 +140,7 @@
                           <td><input class="w3-border w3-round w3-input w3-left" name="addr_district" type="text"></td>
 
                           <td class="w3-right">จังหวัด :</td>
-                          <td>
-                            <select class="w3-select w3-border w3-left" name="option">
-                              <option value="" disabled selected>เลือกจังหวัด</option>
-                              <option value="ภูเก็ต">ภูเก็ต</option>
-                            </select>
-                          </td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_province" type="text"></td>
                       </tr>
 
                       <tr>

@@ -6,7 +6,6 @@
 		var contentString = '<div id="content">'+ '<h4><?php echo $customer->name; ?></h4>' +
 							'<p>Address : <?php echo $customer->address; ?></p>' +
 							'<p>Tel : <?php echo $customer->tel; ?></p>' +
-							'<p>Team : <?php echo $customer->Zone->Team->name; ?></p>' +
 							'</div>';
 
 		function initialize()
@@ -44,7 +43,9 @@
 	@if(Auth::user()->name != NULL)
 	<div class="w3-container w3-center">
 		<br><br>
-		<div class="w3-col" id="googleMap" style="width:100%;height:500px;"></div>
+		<div class="responsive">
+			<div class="w3-col" id="googleMap" style="width:100%;height:500px;"></div>
+		</div>
 	</div>
 	@endif
 @endsection

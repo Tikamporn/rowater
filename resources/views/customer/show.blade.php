@@ -31,6 +31,7 @@
 								<th>ชื่อ</th>
 								<th>ที่อยู่</th>
 								<th>เบอร์ติดต่อ</th>
+								<th>Vat</th>
 								<th>ทีม</th>
 								<th>โซน</th>
 								<th>ที่ตั้ง</th>
@@ -55,6 +56,7 @@
 									</span>
 								</td>
 								<td>{{ $s->tel }}</td>
+								<td>{{ $s->vat }}%</td>
 								<td>{{ $s->Team->name}}</td>
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
@@ -88,6 +90,7 @@
 								<th>ชื่อ</th>
 								<th>ที่อยู่</th>
 								<th>เบอร์ติดต่อ</th>
+								<th>Vat</th>
 								<th>ทีม</th>
 								<th>โซน</th>
 								<th>ที่ตั้ง</th>
@@ -99,7 +102,12 @@
 							<tr>
 								<td>{{ $i }}</td>
 								<td>C{{ sprintf('%04u', $s->id) }}</td>
-								<td>{{ $s->name}}</td>
+								<td class="w3-tooltip">
+									{{ $s->name}}
+									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
+									<a href="{{url('/customer/edit/')}}/{{$s->id}}">{{ $s->name}}</a>
+									</span>
+								</td>
 								<td class="w3-tooltip">
 									{{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }}
 									<span class="w3-text w3-tag w3-small w3-round-xlarge w3-blue" style="position:absolute;left:0;bottom:10px">
@@ -107,6 +115,7 @@
 									</span>
 								</td>
 								<td>{{ $s->tel }}</td>
+								<td>{{ $s->vat }}%</td>
 								<td>{{ $s->Team->name}}</td>
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
@@ -151,7 +160,12 @@
 							<tr>
 								<td>{{ $i }}</td>
 								<td>C{{ sprintf('%04u', $s->id) }}</td>
-								<td>{{ $s->name}}</td>
+								<td class="w3-tooltip">
+									{{ $s->name}}
+									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
+									<a href="{{url('/customer/edit/')}}/{{$s->id}}">{{ $s->name}}</a>
+									</span>
+								</td>
 								<td class="w3-tooltip">
 									{{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }}
 									<span class="w3-text w3-tag w3-small w3-round-xlarge w3-blue" style="position:absolute;left:0;bottom:10px">
