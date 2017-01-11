@@ -50,9 +50,54 @@
 									</span>
 								</td>
 								<td class="w3-tooltip">
-									{{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }}
+									@if($s->addr_subdistrict) 
+										ตำบล{{ $s->addr_subdistrict }}
+									@endif
+
+									@if($s->addr_district) 
+										อำเภอ{{ $s->addr_district }}
+									@endif
+
+									@if($s->addr_province) 
+										จังหวัด{{ $s->addr_province }}
+									@endif
+
 									<span class="w3-text w3-tag w3-small w3-round-xlarge w3-blue" style="position:absolute;left:0;bottom:10px">
-										{{ $s->addr_no }} {{ $s->addr_village_no }} {{ $s->addr_village }} {{ $s->addr_road }} {{ $s->addr_soi }} {{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }} {{ $s->addr_postcode }} 
+										@if($s->addr_no) 
+											เลขที่ {{ $s->addr_no }}
+										@endif
+
+										@if($s->addr_village_no) 
+											หมู่ที่ {{ $s->addr_village_no }}
+										@endif
+
+										@if($s->addr_village) 
+											หมู่บ้าน {{ $s->addr_village }}
+										@endif
+
+										@if($s->addr_road) 
+											ถนน{{ $s->addr_road }}
+										@endif
+
+										@if($s->addr_soi) 
+											ซอย{{ $s->addr_soi }}
+										@endif
+
+										@if($s->addr_subdistrict) 
+											ตำบล{{ $s->addr_subdistrict }}
+										@endif
+
+										@if($s->addr_district) 
+											อำเภอ{{ $s->addr_district }}
+										@endif
+
+										@if($s->addr_province) 
+											จังหวัด{{ $s->addr_province }}
+										@endif
+
+										@if($s->addr_postcode) 
+											{{ $s->addr_postcode }}
+										@endif
 									</span>
 								</td>
 								<td>{{ $s->tel }}</td>
@@ -109,9 +154,54 @@
 									</span>
 								</td>
 								<td class="w3-tooltip">
-									{{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }}
+									@if($s->addr_subdistrict) 
+										ตำบล{{ $s->addr_subdistrict }}
+									@endif
+
+									@if($s->addr_district) 
+										อำเภอ{{ $s->addr_district }}
+									@endif
+
+									@if($s->addr_province) 
+										จังหวัด{{ $s->addr_province }}
+									@endif
+
 									<span class="w3-text w3-tag w3-small w3-round-xlarge w3-blue" style="position:absolute;left:0;bottom:10px">
-										{{ $s->addr_no }} {{ $s->addr_village_no }} {{ $s->addr_village }} {{ $s->addr_road }} {{ $s->addr_soi }} {{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }} {{ $s->addr_postcode }} 
+										@if($s->addr_no) 
+											เลขที่ {{ $s->addr_no }}
+										@endif
+
+										@if($s->addr_village_no) 
+											หมู่ที่ {{ $s->addr_village_no }}
+										@endif
+
+										@if($s->addr_village) 
+											หมู่บ้าน {{ $s->addr_village }}
+										@endif
+
+										@if($s->addr_road) 
+											ถนน{{ $s->addr_road }}
+										@endif
+
+										@if($s->addr_soi) 
+											ซอย{{ $s->addr_soi }}
+										@endif
+
+										@if($s->addr_subdistrict) 
+											ตำบล{{ $s->addr_subdistrict }}
+										@endif
+
+										@if($s->addr_district) 
+											อำเภอ{{ $s->addr_district }}
+										@endif
+
+										@if($s->addr_province) 
+											จังหวัด{{ $s->addr_province }}
+										@endif
+
+										@if($s->addr_postcode) 
+											{{ $s->addr_postcode }}
+										@endif
 									</span>
 								</td>
 								<td>{{ $s->tel }}</td>
@@ -167,9 +257,54 @@
 									</span>
 								</td>
 								<td class="w3-tooltip">
-									{{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }}
+									@if($s->addr_subdistrict) 
+										ตำบล{{ $s->addr_subdistrict }}
+									@endif
+
+									@if($s->addr_district) 
+										อำเภอ{{ $s->addr_district }}
+									@endif
+
+									@if($s->addr_province) 
+										จังหวัด{{ $s->addr_province }}
+									@endif
+
 									<span class="w3-text w3-tag w3-small w3-round-xlarge w3-blue" style="position:absolute;left:0;bottom:10px">
-										{{ $s->addr_no }} {{ $s->addr_village_no }} {{ $s->addr_village }} {{ $s->addr_road }} {{ $s->addr_soi }} {{ $s->addr_subdistrict }} {{ $s->addr_district }} {{ $s->addr_province }} {{ $s->addr_postcode }} 
+										@if($s->addr_no) 
+											เลขที่ {{ $s->addr_no }}
+										@endif
+
+										@if($s->addr_village_no) 
+											หมู่ที่ {{ $s->addr_village_no }}
+										@endif
+
+										@if($s->addr_village) 
+											หมู่บ้าน {{ $s->addr_village }}
+										@endif
+
+										@if($s->addr_road) 
+											ถนน{{ $s->addr_road }}
+										@endif
+
+										@if($s->addr_soi) 
+											ซอย{{ $s->addr_soi }}
+										@endif
+
+										@if($s->addr_subdistrict) 
+											ตำบล{{ $s->addr_subdistrict }}
+										@endif
+
+										@if($s->addr_district) 
+											อำเภอ{{ $s->addr_district }}
+										@endif
+
+										@if($s->addr_province) 
+											จังหวัด{{ $s->addr_province }}
+										@endif
+
+										@if($s->addr_postcode) 
+											{{ $s->addr_postcode }}
+										@endif
 									</span>
 								</td>
 								<td>{{ $s->tel }}</td>

@@ -256,6 +256,7 @@ class ComposerStaticInitfd34cbf2f2743822e413346e1648f4a9
         'CreateAddressesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_04_213556_create_addresses_table.php',
         'CreateCustomerTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_12_161033_create_customer_table.php',
         'CreateCustomerrequestsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_23_051122_create_customerrequests_table.php',
+        'CreateDeliverySaleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_125850_create_delivery_sale_table.php',
         'CreateExpenseTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_09_142341_create_expense_table.php',
         'CreateGroupTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_04_172143_create_group_table.php',
         'CreateLogsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_21_143011_create_purchases_table.php',

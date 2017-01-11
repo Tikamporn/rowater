@@ -9,6 +9,7 @@ return array(
     'CreateAddressesTable' => $baseDir . '/database/migrations/2017_01_04_213556_create_addresses_table.php',
     'CreateCustomerTable' => $baseDir . '/database/migrations/2016_04_12_161033_create_customer_table.php',
     'CreateCustomerrequestsTable' => $baseDir . '/database/migrations/2016_11_23_051122_create_customerrequests_table.php',
+    'CreateDeliverySaleTable' => $baseDir . '/database/migrations/2017_01_11_125850_create_delivery_sale_table.php',
     'CreateExpenseTable' => $baseDir . '/database/migrations/2016_04_09_142341_create_expense_table.php',
     'CreateGroupTable' => $baseDir . '/database/migrations/2016_04_04_172143_create_group_table.php',
     'CreateLogsTable' => $baseDir . '/database/migrations/2016_09_21_143011_create_purchases_table.php',

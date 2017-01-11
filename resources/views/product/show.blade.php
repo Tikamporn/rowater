@@ -6,7 +6,7 @@
 			<div class="w3-col m2 s2" style="width:20%"><p></p></div>
 			<div class="w3-col m8 s8" style="width:60%">
 				<br>
-				<h3 class="w3-text-blue">บริหารจัดการถังน้ำ</h3>
+				<h3 class="w3-text-blue">บริหารจัดการสินค้า</h3>
 				<br>
 				<a href="{{URL::asset('/product/add')}}" class="w3-btn w3-border w3-round-large w3-blue w3-right">เพิ่มสินค้า</a>
 				<br><br>
@@ -41,7 +41,10 @@
 								</div>
 					      	</td>
 							<td><a href="{{URL::asset('/product/edit/')}}/{{$s->id}}"><img src="img/edit.png" style="width:20px"></a></td>
-					      	<td><a href="{{URL::asset('/product/delete/')}}/{{$s->id}}"><img src="img/delete.png" style="width:20px"></a></td>
+					      	<td><a href="{{URL::asset('/product/delete/')}}/{{$s->id}}" onclick="return confirm('Do you really want to submit the form?');">
+					      			<img src="img/delete.png" style="width:20px">
+					      		</a>
+					      	</td>
 					    </tr>
 					   	@endforeach
 				    </tbody>

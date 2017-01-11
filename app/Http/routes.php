@@ -38,6 +38,7 @@ Route::group(['middleware' => 'web'], function () {
 	    Route::get('/customer/map/{id}','CustomerController@showMap');
 	    Route::get('customer/request','MobileController@request');
 	    Route::post('customer/requestAction','MobileController@requestAction');
+
 	// product
 	    Route::get('/product/','ProductController@index');
 	    Route::get('/product/add','ProductController@create');
@@ -45,18 +46,30 @@ Route::group(['middleware' => 'web'], function () {
 	    Route::get('/product/edit/{id}','ProductController@store');
 	    Route::post('/product/editAction','ProductController@storeAction');
 	    Route::any('/product/delete/{id}','ProductController@detroy');
+
 	 // delivery
 	    Route::get('/delivery/','BusinessController@index');
 	    Route::post('/delivery/search','BusinessController@search');
 	    Route::get('/delivery/location/{id}','BusinessController@location');
+
 	 // Mobile
 	    Route::post('/mobile/getAll','MobileController@getAll');
 	    Route::post('/mobile/getCustomer','MobileController@getCustomer');
 	    Route::post('/mobile/login','MobileController@logIn');
 	    Route::post('/mobile/getuser','MobileController@getUser');
+
 	 // team
 	    Route::get('/team/','TeamController@index');
 	    Route::get('/team/member/{id}','TeamController@member');
+
+	 // zone
+	    Route::get('/zone/','ZoneController@index');
+	    Route::get('/zone/add','ZoneController@create');
+	    Route::post('/zone/addAction','ZoneController@createAction');
+	    Route::get('/zone/edit/{id}','ZoneController@edit');
+	    Route::post('/zone/editAction','ZoneController@editAction');
+	    Route::get('/zone/delete/{id}','ZoneController@delete');
+
 	 // business
 	    Route::get('/purchase/','BusinessController@show');
 	    Route::get('/sales/','BusinessController@create');

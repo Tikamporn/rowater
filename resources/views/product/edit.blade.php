@@ -1,51 +1,35 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-3container">
-    <br><br>
-</div>
 <div class="w3-row">
-    <div class="w3-col s4 w3-center">
-    <p></p>
-    </div>
-
-    <div class="w3-col s4 w3-white w3-animate-opacity">
-    <div action="form.asp" class="w3-card-4">
-        <div class="w3-container w3-teal">
-            <h2>Edit customer ID { {{$product->id}} }</h2>
-        </div>
+    <div class="w3-col m4 s4"><p></p></div>
+    <div class="w3-col m4 s4 w3-round-xlarge">
+        <br><br>
+        <h3 class="w3-text-blue">แก้ไขรายการสินค้า</h3>
+        <br>
         <form class="w3-container" role="form" method="POST" action="{{ url('/product/editAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
-            {!! csrf_field() !!}
-            <p>
-			<input type="hidden" class="w3-input w3-border w3-white" id="id" name="id" value="{{$product->id}}">
-			</p>
-            <p>
-            <label class="w3-label w3-text-teal">Name:</label>
-			<input type="text" class="w3-input w3-border w3-white" id="name" name="name" required="" placeholder="Name of product" value="{{$product->name}}">
-			</p>
-			<p>
-			<div class="w3-row-padding">
-				<div class="w3-third">
-					<label class="w3-label w3-text-teal">Amount:</label>
-					<input type="number" class="w3-input w3-border w3-white" id="amount" name="amount" placeholder="5" value="{{$product->amount}}">
-				</div>
-				<div class="w3-third">
-					<label class="w3-label w3-text-teal">Amount-Max:</label>
-					<input type="number" class="w3-input w3-border w3-white" id="amount_max" name="amount_max" placeholder="5" value="{{$product->amount_max}}">
-				</div>
-				<div class="w3-third">
-					<label class="w3-label w3-text-teal">Amount-Alert:</label>
-					<input type="number" class="w3-input w3-border w3-white" id="amount_alert" name="amount_alert" placeholder="5" value="{{$product->amount_alert}}">
-				</div>
-            </div>
-            </p>
-            <p>
-            <button class="w3-btn w3-round w3-teal">Submit</button>
-            <a href="{{ URL::previous() }}" class="w3-btn w3-round w3-blue" role="button">Back</a>
-            </p>			
-        </form>
+            <table class="w3-table">
+                <tr>
+                      <td class="w3-right">Name :</td>
+                      <td><input class="w3-border w3-round w3-input w3-left" name="name" type="text" value="{{$product->name}}"></td>
+                </tr>
+                <tr>
+                      <td class="w3-right">Quantity :</td>
+                      <td><input class="w3-border w3-round w3-input w3-left" name="amount" type="number" value="{{$product->amount}}"></td>
+                </tr>
+                <tr>
+                      <td class="w3-right">Quantity Max :</td>
+                      <td><input class="w3-border w3-round w3-input w3-left" name="amount_max" type="number" value="{{$product->amount_max}}"></td>
+                </tr>
+                <tr>
+                      <td class="w3-right">Quantity Alert :</td>
+                      <td><input class="w3-border w3-round w3-input w3-left" name="amount_alert" type="number" value="{{$product->amount_alert}}"></td>
+                </tr>
+            </table>    
+            <br>
+            <button class="w3-btn w3-round w3-green w3-xlarge w3-padding-xlarge w3-left" name="submit">บันทึก</button>
+            <a href="{{ URL::previous() }}" class="w3-btn w3-round w3-red w3-xlarge w3-padding-xlarge w3-right" role="button">ย้อนกลับ</a>
+        </form>   
     </div>
-    <div class="w3-col s4 w3-center">
-    <p></p>
-    </div>
+    <div class="w3-col m4 s4"><p></p></div>
 </div>
 @endsection

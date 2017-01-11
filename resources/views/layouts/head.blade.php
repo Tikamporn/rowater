@@ -29,8 +29,9 @@
 		    	<a href="#"><img src="{{url('/menu/list.png')}}" class="w3-round-small" alt="Norway" style="width:20px"> บริหารจัดการ <i class="fa fa-caret-down"></i></a>
 		    	<div class="w3-dropdown-content w3-white w3-card-4">
 		      		<a href="{{url('customer')}}">บริหารจัดการลูกค้า</a>
-		      		<a href="{{url('product')}}">บริหารจัดการถังน้ำ</a>
+		      		<a href="{{url('product')}}">บริหารจัดการสินค้า</a>
 		      		<a href="{{url('team')}}">บริหารจัดการทีม</a>
+		      		<a href="{{url('zone')}}">บริหารจัดการโซน</a>
 		      		<a href="{{url('sales')}}">เพิ่มการซื้อ-ขาย</a>
 		    	</div>
 		    </li>
