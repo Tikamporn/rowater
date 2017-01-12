@@ -35,10 +35,10 @@
                           <td class="w3-right"><label class="w3-text-red"><b>*</b></label>ทีม :</td>
                           <td>
                             <select class="w3-select w3-border w3-left" name="team" required>
-								<option value="" disabled selected>เลือกทีม</option>
-								@foreach($team as $teams)
-									<option value="{{ $teams->id }}">{{ $teams->name }}</option>
-								@endforeach
+            								<option value="" disabled selected>เลือกทีม</option>
+            								@foreach($team as $teams)
+            									<option value="{{ $teams->id }}">{{ $teams->name }}</option>
+            								@endforeach
                             </select>
                           </td>
                       </tr>
@@ -54,10 +54,10 @@
                           <td class="w3-right"><label class="w3-text-red"><b>*</b></label>กลุ่มลูกค้า :</td>
                           <td> 
                             <select class="w3-select w3-border w3-left" name="group">
-								<option value="" disabled selected>เลือกกลุ่ม</option>
-								@foreach($group as $groups)
-									<option value="{{ $groups->id }}">{{ $groups->name }}</option>
-								@endforeach
+            								<option value="" disabled selected>เลือกกลุ่ม</option>
+            								@foreach($group as $groups)
+            									<option value="{{ $groups->id }}">{{ $groups->name }}</option>
+            								@endforeach
                             </select>
                           </td>
                       </tr>

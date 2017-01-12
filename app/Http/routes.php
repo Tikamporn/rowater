@@ -61,6 +61,13 @@ Route::group(['middleware' => 'web'], function () {
 	 // team
 	    Route::get('/team/','TeamController@index');
 	    Route::get('/team/member/{id}','TeamController@member');
+	    Route::get('/team/add','TeamController@create');
+	    Route::post('/team/addAction','TeamController@createAction');
+	    Route::get('/team/delete/team/{id}','TeamController@delete');
+	    Route::get('/team/delete/zone','TeamController@zonedelete');
+	    Route::get('/team/delete/member','TeamController@memberdelete');
+	    Route::get('/team/edit/{id}','TeamController@edit');
+	    Route::post('/team/editAction/{id}','TeamController@editAction');
 
 	 // zone
 	    Route::get('/zone/','ZoneController@index');

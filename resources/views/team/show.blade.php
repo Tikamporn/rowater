@@ -47,7 +47,7 @@
 				                    </a> 
 								</td>
 								<td>
-									<a href="{{url('/team/delete/')}}/{{$teams->id}}">
+									<a href="{{url('/team/delete/team/')}}/{{$teams->id}}" onclick="return confirm('Do you really want to submit the form?');">
 										<img src="{{url('img/delete.png')}}" alt="" style="width: 20px">
 				                    </a> 
 								</td>

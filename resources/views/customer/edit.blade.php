@@ -26,24 +26,33 @@
                 <td class="w3-right"><label class="w3-text-red"><b>*</b></label>โซน :</td>
                 <td>
                     <select class="w3-select w3-border w3-left" name="zone" required>
+                      @if($customer->zone_id != NULL)
                       <option value="{{ $customer->zone_id }}">{{ $customer->Zone->name }}</option>
+                      @endif
+                      @if($zone != NULL)
                       @foreach($zone as $zones)
                       	@if($customer->zone_id != $zones->id)
                       		<option value="{{ $zones->id }}">{{ $zones->name }}</option>
                       	@endif
                       @endforeach
+                    @endif
                     </select>
                 </td>
 
                 <td class="w3-right"><label class="w3-text-red"><b>*</b></label>ทีม :</td>
                 <td>
                   <select class="w3-select w3-border w3-left" name="team" required>
-			               <option value="{{ $customer->team_id }}">{{ $customer->Team->name }}</option>
-  								@foreach($team as $teams)
-  									@if($customer->team_id != $teams->id)
-                                  		<option value="{{ $teams->id }}">{{ $teams->name }}</option>
-                                  	@endif
-  								@endforeach
+                      @if($customer->team_id != NULL)
+                      <option value="{{ $customer->team_id }}">{{ $customer->Team->name }}</option>
+                      @endif
+                      @if($team != NULL)
+                      
+                      @foreach($team as $teams)
+                        @if($customer->team_id != $teams->id)
+                          <option value="{{ $teams->id }}">{{ $teams->name }}</option>
+                        @endif
+                      @endforeach
+                      @endif
                   </select>
                 </td>
             </tr>
@@ -59,12 +68,16 @@
                 <td class="w3-right"><label class="w3-text-red"><b>*</b></label>กลุ่มลูกค้า :</td>
                 <td> 
                   <select class="w3-select w3-border w3-left" name="group">
-			             <option value="{{ $customer->group_id }}">{{ $customer->Group->name }}</option>
+                    @if($customer->group_id != NULL)
+			              <option value="{{ $customer->group_id }}">{{ $customer->Group->name }}</option>
+                    @endif
+                    @if($group != NULL)
               			@foreach($group as $groups)
               				@if($customer->group_id != $groups->id)
               					<option value="{{ $groups->id }}">{{ $groups->name }}</option>
               				@endif
               			@endforeach
+                    @endif
                   </select>
                 </td>
             </tr>

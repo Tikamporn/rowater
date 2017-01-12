@@ -16,14 +16,17 @@
 
 			<div id="Member" class="w3-container team" style="display:block">
 				<div class="w3-responsive">
-					<a href="{{url('/team/member/add')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มสมาชิก</button></a>
 					@foreach($team as $teams)
 					<h3>ทีม {{ $teams->name }}</h3>
 					<br>
 					<ul class="w3-ul w3-card-4">
 						@foreach($teams->User as $users)
 							<li class="w3-padding-16">
-							<span onclick="this.parentElement.style.display='none'" class="w3-closebtn w3-padding w3-margin-right w3-medium">&times;</span>
+							<span class="w3-closebtn w3-padding w3-margin-right w3-medium">
+								<a href="{{url('/team/delete/member')}}?team={{$teams->id}}&member={{$users->id}}" onclick="return confirm('Do you really want to submit the form?');">
+									<img src="{{url('img/delete.png')}}" alt="" style="width: 20px">
+								</a>
+							</span>
 							@if($users->pivot->role == "หัวหน้าทีม")
 								<img src="{{ url('img/avatar_head.png') }}" class="w3-left w3-circle w3-margin-right" style="width:60px">
 							@else
@@ -40,14 +43,17 @@
 
 			<div id="Zone" class="w3-container team" style="display:none">
 				<div class="w3-responsive">
-					<a href="{{url('/team/member/zone/add')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มโซน</button></a>
 					@foreach($team as $teams)
 					<h3>ทีม {{ $teams->name }}</h3>
 					<br>
 					<ul class="w3-ul w3-card-4">
 						@foreach($teams->Zone as $zones)
 							<li class="w3-padding-16">
-							<span onclick="this.parentElement.style.display='none'" class="w3-closebtn w3-padding w3-margin-right w3-medium">&times;</span>
+							<span class="w3-closebtn w3-padding w3-margin-right w3-medium">
+								<a href="{{url('/team/delete/zone')}}?team={{$teams->id}}&zone={{$zones->id}}" onclick="return confirm('Do you really want to submit the form?');">
+									<img src="{{url('img/delete.png')}}" alt="" style="width: 20px">
+								</a>
+							</span>
 							<span class="w3-large">{{ $zones->name }}</span><br>
 							</li>
 						@endforeach

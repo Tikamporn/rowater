@@ -102,7 +102,13 @@
 								</td>
 								<td>{{ $s->tel }}</td>
 								<td>{{ $s->vat }}%</td>
-								<td>{{ $s->Team->name}}</td>
+								<td>
+									@if($s->team_id)
+										{{ $s->Team->name }}
+									@else
+										ไม่ระบุ
+									@endif
+								</td>
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
 									@if($s->lat !=0 && $s->long)
@@ -206,7 +212,13 @@
 								</td>
 								<td>{{ $s->tel }}</td>
 								<td>{{ $s->vat }}%</td>
-								<td>{{ $s->Team->name}}</td>
+								<td>
+									@if($s->team_id)
+										{{ $s->Team->name }}
+									@else
+										ไม่ระบุ
+									@endif
+								</td>
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
 									@if($s->lat !=0 && $s->long)
@@ -308,7 +320,13 @@
 									</span>
 								</td>
 								<td>{{ $s->tel }}</td>
-								<td>{{ $s->Team->name}}</td>
+								<td>
+									@if($s->team_id)
+										{{ $s->Team->name }}
+									@else
+										ไม่ระบุ
+									@endif
+								</td>
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
 									@if($s->lat !=0 && $s->long)
