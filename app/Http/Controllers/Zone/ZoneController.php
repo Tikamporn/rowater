@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Zone;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
+use Auth;
 use App\Zone;
 
 class ZoneController extends Controller
@@ -48,7 +48,7 @@ class ZoneController extends Controller
         }
     }
 
-    public function edit($id)
+    public function store($id)
     {
     	if(\Auth::check() && \Auth::user()->level != 'user') {
         	$zone = Zone::find($id);
@@ -58,7 +58,7 @@ class ZoneController extends Controller
         }
     }
 
-    public function editAction() 
+    public function storeAction() 
     {
     	if(\Auth::check() && \Auth::user()->level != 'user') {
         	$zone = Zone::find(Input::get('id'));

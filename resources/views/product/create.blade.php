@@ -6,22 +6,22 @@
         <br><br>
         <h3 class="w3-text-blue">เพิ่มรายการสินค้า</h3>
         <br>
-        <form class="w3-container" role="form" method="POST" action="{{ url('/product/addAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
+        <form class="w3-container" role="form" method="POST" action="{{ url('/product/createAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
             <table class="w3-table">
                 <tr>
-                      <td class="w3-right">Name :</td>
+                      <td class="w3-right">ชื่อ :</td>
                       <td><input class="w3-border w3-round w3-input w3-left" name="name" type="text"></td>
                 </tr>
                 <tr>
-                      <td class="w3-right">Quantity :</td>
+                      <td class="w3-right">ปริมาณ :</td>
                       <td><input class="w3-border w3-round w3-input w3-left" name="amount" type="number"></td>
                 </tr>
                 <tr>
-                      <td class="w3-right">Quantity Max :</td>
+                      <td class="w3-right">ปริมาณสูงสุด :</td>
                       <td><input class="w3-border w3-round w3-input w3-left" name="amount_max" type="number"></td>
                 </tr>
                 <tr>
-                      <td class="w3-right">Quantity Alert :</td>
+                      <td class="w3-right">ขั้นต่ำแจ้งเตือน :</td>
                       <td><input class="w3-border w3-round w3-input w3-left" name="amount_alert" type="number"></td>
                 </tr>
             </table>    

@@ -6,7 +6,7 @@
 		<div class="w3-col l10 m10 s12" style="width:60%">
 			<br><br>
 			<h3 class="w3-text-blue">บริหารจัดการลูกค้า</h3>
-			<a href="{{url('/customer/add')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มลูกค้า</button></a>
+			<a href="{{url('/customer/create')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มลูกค้า</button></a>
 			<br><br>
 			<a href="javascript:void(0)" onclick="openCustomer(event, 'All');">
 			<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-blue">ลูกค้าทั้งหมด</div>
@@ -46,7 +46,7 @@
 								<td class="w3-tooltip">
 									{{ $s->name}}
 									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/customer/edit/')}}/{{$s->id}}">{{ $s->name}}</a>
+									<a href="{{url('/customer/store/')}}/{{$s->id}}">{{ $s->name}}</a>
 									</span>
 								</td>
 								<td class="w3-tooltip">
@@ -112,7 +112,7 @@
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
 									@if($s->lat !=0 && $s->long)
-										<a href="{{URL::asset('/customer/map/')}}/{{$s->id}}" target="_blank">
+										<a href="{{URL::asset('/customer/location/')}}/{{$s->id}}" target="_blank">
 					                    	<img src="{{url('img/hasLocation.png')}}" alt="" style="width: 20px">
 										</a>
 									@else
@@ -156,7 +156,7 @@
 								<td class="w3-tooltip">
 									{{ $s->name}}
 									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/customer/edit/')}}/{{$s->id}}">{{ $s->name}}</a>
+									<a href="{{url('/customer/store/')}}/{{$s->id}}">{{ $s->name}}</a>
 									</span>
 								</td>
 								<td class="w3-tooltip">
@@ -222,7 +222,7 @@
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
 									@if($s->lat !=0 && $s->long)
-										<a href="{{URL::asset('/customer/map/')}}/{{$s->id}}" target="_blank">
+										<a href="{{URL::asset('/customer/location/')}}/{{$s->id}}" target="_blank">
 						                    <img src="{{url('img/hasLocation.png')}}" alt="" style="width: 20px">
 										</a>
 									@else
@@ -265,7 +265,7 @@
 								<td class="w3-tooltip">
 									{{ $s->name}}
 									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/customer/edit/')}}/{{$s->id}}">{{ $s->name}}</a>
+									<a href="{{url('/customer/store/')}}/{{$s->id}}">{{ $s->name}}</a>
 									</span>
 								</td>
 								<td class="w3-tooltip">
@@ -330,7 +330,7 @@
 								<td>{{ $s->Zone->name }}</td>
 			                    <td>
 									@if($s->lat !=0 && $s->long)
-										<a href="{{URL::asset('/customer/map/')}}/{{$s->id}}" target="_blank">
+										<a href="{{URL::asset('/customer/location/')}}/{{$s->id}}" target="_blank">
 						                    <img src="{{url('img/hasLocation.png')}}" alt="" style="width: 20px">
 										</a>
 									@else

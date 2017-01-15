@@ -7,7 +7,7 @@
 			<br><br>
 			<div class="w3-responsive">
 				<h3 class="w3-text-blue">บริหารจัดการโซน</h3>
-				<a href="{{url('/zone/add')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มโซน</button></a>
+				<a href="{{url('/zone/create')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มโซน</button></a>
 				<br><br>
 				<table class="w3-table-all w3-margin-top">
 					<thead>
@@ -28,13 +28,13 @@
 							<td class="w3-tooltip">
 								Z{{ sprintf('%04u', $zones->id) }}
 								<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/zone/edit/')}}/{{$zones->id}}">T{{ sprintf('%04u', $zones->id) }}</a>
+									<a href="{{url('/zone/store/')}}/{{$zones->id}}">T{{ sprintf('%04u', $zones->id) }}</a>
 								</span>
 							</td>
 							<td class="w3-tooltip">
 								{{$zones->name}}
 								<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/zone/edit/')}}/{{$zones->id}}">{{$zones->name}}</a>
+									<a href="{{url('/zone/store/')}}/{{$zones->id}}">{{$zones->name}}</a>
 								</span>
 							</td>
 							<td class="w3-tooltip">

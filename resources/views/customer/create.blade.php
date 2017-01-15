@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="w3-row">
-	<form class="w3-container" role="form" method="POST" action="{{ url('/customer/addAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
+	<form class="w3-container" role="form" method="POST" action="{{ url('/customer/createAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
 		 {!! csrf_field() !!}
 			<div class="w3-col m1 s1"><p></p></div>
 			<div class="w3-col m10 s10 w3-large">

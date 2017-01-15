@@ -32,14 +32,14 @@
 		      		<a href="{{url('product')}}">บริหารจัดการสินค้า</a>
 		      		<a href="{{url('team')}}">บริหารจัดการทีม</a>
 		      		<a href="{{url('zone')}}">บริหารจัดการโซน</a>
-		      		<a href="{{url('sales')}}">เพิ่มการซื้อ-ขาย</a>
+		      		<!-- <a href="{{url('sales')}}">เพิ่มการซื้อ-ขาย</a> -->
 		    	</div>
 		    </li>
 
 		    <li  class="w3-dropdown-hover">
 		    	<a><img src="{{url('/menu/book.png')}}" class="w3-round-small" alt="Norway" style="width:20px"> รายงาน <i class="fa fa-caret-down"></i></a>
 		    	<div class="w3-dropdown-content w3-white w3-card-4">
-		      		<a href="{{url('purchase')}}">รายงานการขาย</a>
+		      		<!-- <a href="{{url('purchase')}}">รายงานการขาย</a> -->
 		    	</div>
 		    </li>
 		    

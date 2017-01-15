@@ -6,7 +6,7 @@
 		<br><br>
 		<h3 class="w3-text-blue">แก้ไขโซน</h3>
 		<br>
-		<form class="w3-container" role="form" method="POST" action="{{ url('/zone/editAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
+		<form class="w3-container" role="form" method="POST" action="{{ url('/zone/storeAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
 			<table class="w3-table">
 			  	<tr>
 			  		<input name="id" type="hidden" value="{{$zone->id}}"></td>

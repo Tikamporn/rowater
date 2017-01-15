@@ -7,7 +7,7 @@
 			<br><br>
 			<div class="w3-responsive">
 				<h3 class="w3-text-blue">บริหารจัดการทีมขนส่ง</h3>
-				<a href="{{url('/team/add')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มทีมขนส่ง</button></a>
+				<a href="{{url('/team/create')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มทีมขนส่ง</button></a>
 				<br><br>
 				<table class="w3-table-all w3-margin-top">
 					<thead>
@@ -42,7 +42,7 @@
 							<td>{{$teams->created_at}}</td>
 							@if(Auth::user()->level != 'user')
 								<td>
-									<a href="{{url('/team/edit/')}}/{{$teams->id}}">
+									<a href="{{url('/team/store/')}}/{{$teams->id}}">
 										<img src="{{url('img/edit.png')}}" alt="" style="width: 20px">
 				                    </a> 
 								</td>
