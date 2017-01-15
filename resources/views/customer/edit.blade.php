@@ -62,13 +62,13 @@
                 <td>
                   @if($customer->status == 1)
                     <select class="w3-select w3-border w3-round w3-left" name="status">
-                      <option value="1" class="w3-green">ทำงาน</option>
+                      <option value="1" class="w3-green">ใช้บริการ</option>
                       <option value="0" class="w3-red">ยกเลิก</option>
                     </select>
                   @elseif($customer->status == 0)
                     <select class="w3-select w3-border w3-round w3-left w3-red" name="status">
                       <option value="0" class="w3-red">ยกเลิก</option>
-                      <option value="1" class="w3-green">ทำงาน</option>
+                      <option value="1" class="w3-green">ใช้บริการ</option>
                     </select>
                   @endif
                 </td>

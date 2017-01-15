@@ -47,7 +47,7 @@
                           <td class="w3-right">สถานะ :</td>
                           <td>
                             <select class="w3-select w3-border w3-round w3-left" name="status">
-                              <option value="1">ทำงาน</option>
+                              <option value="1">ใช้บริการ</option>
                               <option value="0">ยกเลิก</option>
                             </select>
                           </td>
