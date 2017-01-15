@@ -42,7 +42,15 @@
 							@foreach($customer as $s)
 							<tr>
 								<td>{{ $i }}</td>
-								<td>C{{ sprintf('%04u', $s->id) }}</td>
+								@if($s->status == 0)
+									<td class="w3-text-red">
+										C{{ sprintf('%04u', $s->id) }}
+									</td>
+								@elseif($s->status == 1)
+									<td>
+										C{{ sprintf('%04u', $s->id) }}
+									</td>
+								@endif
 								<td class="w3-tooltip">
 									{{ $s->name}}
 									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
@@ -152,7 +160,15 @@
 							@foreach($vat as $s)
 							<tr>
 								<td>{{ $i }}</td>
-								<td>C{{ sprintf('%04u', $s->id) }}</td>
+								@if($s->status == 0)
+									<td class="w3-text-red">
+										C{{ sprintf('%04u', $s->id) }}
+									</td>
+								@elseif($s->status == 1)
+									<td>
+										C{{ sprintf('%04u', $s->id) }}
+									</td>
+								@endif
 								<td class="w3-tooltip">
 									{{ $s->name}}
 									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
@@ -261,7 +277,15 @@
 							@foreach($novat as $s)
 							<tr>
 								<td>{{ $i }}</td>
-								<td>C{{ sprintf('%04u', $s->id) }}</td>
+								@if($s->status == 0)
+									<td class="w3-text-red">
+										C{{ sprintf('%04u', $s->id) }}
+									</td>
+								@elseif($s->status == 1)
+									<td>
+										C{{ sprintf('%04u', $s->id) }}
+									</td>
+								@endif
 								<td class="w3-tooltip">
 									{{ $s->name}}
 									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">

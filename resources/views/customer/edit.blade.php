@@ -60,9 +60,17 @@
             <tr>
                 <td class="w3-right">สถานะ :</td>
                 <td>
-                  <select class="w3-select w3-border w3-round w3-left" name="status">
-                  	<option value="1">Active</option>
-                  </select>
+                  @if($customer->status == 1)
+                    <select class="w3-select w3-border w3-round w3-left" name="status">
+                      <option value="1" class="w3-green">ทำงาน</option>
+                      <option value="0" class="w3-red">ยกเลิก</option>
+                    </select>
+                  @elseif($customer->status == 0)
+                    <select class="w3-select w3-border w3-round w3-left w3-red" name="status">
+                      <option value="0" class="w3-red">ยกเลิก</option>
+                      <option value="1" class="w3-green">ทำงาน</option>
+                    </select>
+                  @endif
                 </td>
 
                 <td class="w3-right"><label class="w3-text-red"><b>*</b></label>กลุ่มลูกค้า :</td>
