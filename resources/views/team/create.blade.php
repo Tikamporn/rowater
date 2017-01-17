@@ -7,7 +7,7 @@
 			<br><br>
 			<h3 class="w3-text-blue">ลงทะเบียนทีม</h3>
 			<br>
-			<form class="w3-container" role="form" method="POST" action="{{ url('/team/addAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
+			<form class="w3-container" role="form" method="POST" action="{{ url('/team/createAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
 				<table class="w3-table">
 				  	<tr>
 	                    <td class="w3-right">ชื่อทีม :</td>
