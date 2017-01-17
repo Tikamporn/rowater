@@ -7,6 +7,7 @@
 			<div class="w3-col m10 s10 w3-large">
 				<br><br>
 				<div class="w3-bottombar w3-border-blue">
+          <button onclick="document.getElementById('id02').style.display='block'" type="button" class="w3-btn w3-indigo w3-round-large w3-right">เลือกสินค้า</button>
 					<h2 class="w3-text-blue">ลงทะเบียนลูกค้า</h2>
 				</div>
 				<br>
@@ -153,6 +154,66 @@
                       </tr>
 					</table>
 					<br><br><br>
+          <div id="id02" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('id02').style.display='none'" class="w3-closebtn">&times;</span>
+                  <br><br>
+                    <div class="w3-border w3-border-blue  w3-round-xlarge">
+                      <div class="w3-row">
+                        <div class="w3-col m1 s1"><p></p></div>
+                        <div class="w3-col m10 s10">
+                        <br>
+                          <table class="w3-table">
+                              <tr>
+                                  <td class="w3-right">สินค้า :</td>
+                                  <td>
+                                    <select class="w3-select w3-border w3-left" name="product">
+                                      <option value="" disabled selected>เลือกสินค้า</option>
+                                      @foreach($product as $products)
+                                        <option value="{{$products->id}}">{{$products->name}}</option>
+                                      @endforeach
+                                    </select>
+                                  </td>
+
+                                  <td class="w3-right">วันที่ส่ง :</td>
+                                  <td><input type="date" name="date_delivery"></td>
+                              </tr>
+
+                              <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td class="w3-right">จำนวน :</td>
+                                  <td><input type="number" name="amount"></td>
+                              </tr>
+
+                              <tr>
+                                  <td></td>
+                                  <td></td>
+
+                                  <td class="w3-right">จัดส่ง  :</td>
+                                  <td>
+                                    <select class="w3-select w3-border w3-left" name="date_every">
+                                      <option value="" disabled selected>เลือกรอบการส่ง</option>
+                                      <option value="7">ทุก 7 วัน</option>
+                                      <option value="15">ทุก 15 วัน</option>
+                                      <option value="30">ทุก 1 เดือน</option>
+                                    </select>
+
+                                  </td>
+                              </tr>
+
+                          </table>
+                          <br>
+                        </div>
+                        <br>
+                        <div class="w3-col m1 s1"><p></p></div>
+                      </div>
+                      </div>
+                      <br>
+                      </div><br>
+                  </div>
+                  </div>
 				</div>
 				<div class="w3-col m4 s4"><p></p></div>
 				<div class="w3-col m4 s4">
@@ -165,3 +226,5 @@
 	</form>
 </div>
 @endsection
+
+

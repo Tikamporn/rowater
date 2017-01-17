@@ -36,8 +36,9 @@ class CustomerController extends Controller
             $zone = Zone::All();
             $team = Team::All();
             $group = Group::All();
+            $product = Product::All();
             $customer = Customer::max('id');
-            return view('customer.create',compact('zone','team','group','customer'));
+            return view('customer.create',compact('zone','team','group','customer','product'));
         }else{
             return redirect('customer/');
         }
@@ -69,6 +70,14 @@ class CustomerController extends Controller
         	$customer->type = Input::get('type');
             $customer->ship_number = Input::get('shipnumber');
         	$customer->save();
+
+            $product = Input::get('product');
+            $date_delivery = Input::get('date_delivery');
+            $date_every = Input::get('date_every');
+            $amount = Input::get('amount');
+            $price = Input::get('price');
+
+            $customer->product()->attach($product,['amount' => $amount],['day' => $date_delivery],['every' => $date_every],['price' => $price]);
 
         	return redirect('customer/');
         }else{
