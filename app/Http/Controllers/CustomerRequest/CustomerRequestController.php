@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Customer;
+namespace App\Http\Controllers\CustomerRequest;
 
 use Illuminate\Http\Request;
 
@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use Auth;
 use App\Customer;
+use App\Customerrequest;
 use App\Product;
 use App\Team;
 use App\Group;
