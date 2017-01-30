@@ -17,6 +17,7 @@
 							<th>ชื่อโซน</th>
 							<th>รายละเอียด</th>
 							<th>วันที่สร้าง</th>
+							<th>แก้ไข</th>
 							<th>ลบ</th>
 						</tr>
 					</thead>
@@ -25,26 +26,17 @@
 						@foreach($zone as $zones)
 						<tr>
 							<td>{{$i}}</td>
-							<td class="w3-tooltip">
-								Z{{ sprintf('%04u', $zones->id) }}
-								<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/zone/store/')}}/{{$zones->id}}">T{{ sprintf('%04u', $zones->id) }}</a>
-								</span>
-							</td>
-							<td class="w3-tooltip">
-								{{$zones->name}}
-								<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/zone/store/')}}/{{$zones->id}}">{{$zones->name}}</a>
-								</span>
-							</td>
-							<td class="w3-tooltip">
-								{{ str_limit($zones->detail, $limit = 10, $end = '') }}
-								<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									{{$zones->detail}}
-								</span>
-							</td>
+							<td>Z{{ sprintf('%04u', $zones->id) }}</td>
+							<td>{{$zones->name}}</td>
+							<td>{{ str_limit($zones->detail, $limit = 10, $end = '') }}</td>
 							<td>{{$zones->created_at}}</td>
-							<td><a href="{{URL::asset('/zone/delete/')}}/{{$zones->id}}" onclick="return confirm('Do you really want to submit the form?');">
+							<td>
+								<a href="{{url('/zone/store/')}}/{{$zones->id}}">
+					      			<img src="img/edit.png" style="width:20px">
+					      		</a>
+					      	</td>
+							<td>
+								<a href="{{URL::asset('/zone/delete/')}}/{{$zones->id}}" onclick="return confirm('Do you really want to submit the form?');">
 					      			<img src="img/delete.png" style="width:20px">
 					      		</a>
 					      	</td>

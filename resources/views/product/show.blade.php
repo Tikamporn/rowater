@@ -13,11 +13,12 @@
 				<table class="w3-table w3-bordered w3-hoverable w3-margin-top w3-centered">
 					<thead>
 					  	<tr class="w3-blue">
-						    <th style="width:10%">รหัสสินค้า</th>
-						    <th style="width:20%">ชื่อสินค้า</th>
+						    <th>รหัสสินค้า</th>
+						    <th>ชื่อสินค้า</th>
 						    <th>ปริมาณ</th>
 						    @if(Auth::user()->level != 'user')
-						    	<th style="width:10%"></th>
+						    	<th>แก้ไข</th>
+						    	<th>ลบ</th>
 							@endif
 					  	</tr>
 				  	</thead>
@@ -25,14 +26,7 @@
 				  		@foreach ($product as $s )
 					  	<tr>
 					      	<td>P{{ sprintf('%04u', $s->id) }}</td>
-					      	<td class="w3-tooltip">
-								{{ $s->name}}
-								<span class="w3-text w3-tag w3-red" style="position:left:10;bottom:5px">
-									@if(Auth::user()->level != 'user')
-										<a href="{{url('/product/store/')}}/{{$s->id}}">แก้ไข</a>
-									@endif
-								</span>
-							</td>
+					      	<td>{{ $s->name}}</td>
 					      	<td>
 					      		<div class="w3-progress-container">
 								    @if($s->amount >= $s->amount_alert)
@@ -46,7 +40,13 @@
 									@endif
 								</div>
 					      	</td>
-					      	<td><a href="{{URL::asset('/product/delete/')}}/{{$s->id}}" onclick="return confirm('Do you really want to submit the form?');">
+					      	<td>
+					      		<a href="{{url('/product/store/')}}/{{$s->id}}">
+					      			<img src="img/edit.png" style="width:20px">
+					      		</a>
+					      	</td>
+					      	<td>
+					      		<a href="{{URL::asset('/product/delete/')}}/{{$s->id}}" onclick="return confirm('Do you really want to submit the form?');">
 					      			<img src="img/delete.png" style="width:20px">
 					      		</a>
 					      	</td>

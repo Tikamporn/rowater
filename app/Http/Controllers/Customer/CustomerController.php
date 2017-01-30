@@ -58,7 +58,9 @@ class CustomerController extends Controller
             $customer->addr_road = Input::get('addr_road');
             $customer->addr_province = Input::get('addr_province');
         	$customer->addr_postcode = Input::get('addr_postcode');
-        	$customer->tel = Input::get('tel');
+            $customer->tel = Input::get('tel');
+        	$customer->pin = Input::get('tel');
+            $customer->status = Input::get('status');
         	$customer->zone_id = Input::get('zone');
         	$customer->group_id = Input::get('group');
             $customer->team_id = Input::get('team');
@@ -111,6 +113,7 @@ class CustomerController extends Controller
             $customer->addr_province = Input::get('addr_province');
             $customer->addr_postcode = Input::get('addr_postcode');
             $customer->tel = Input::get('tel');
+            $customer->pin = Input::get('tel');
             $customer->status = Input::get('status');
             $customer->zone_id = Input::get('zone');
             $customer->group_id = Input::get('group');

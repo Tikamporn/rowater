@@ -35,6 +35,7 @@
 								<th>ทีม</th>
 								<th>โซน</th>
 								<th>ที่ตั้ง</th>
+								<th>แก้ไข</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -51,12 +52,7 @@
 										C{{ sprintf('%04u', $s->id) }}
 									</td>
 								@endif
-								<td class="w3-tooltip">
-									{{ $s->name}}
-									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/customer/store/')}}/{{$s->id}}">{{ $s->name}}</a>
-									</span>
-								</td>
+								<td>{{ $s->name}}</td>
 								<td class="w3-tooltip">
 									@if($s->addr_subdistrict) 
 										ตำบล{{ $s->addr_subdistrict }}
@@ -127,6 +123,11 @@
 				                    	<img src="{{url('img/noLocation.png')}}" alt="" style="width: 20px">
 									@endif
 								</td>
+								<td>
+									<a href="{{url('/customer/store/')}}/{{$s->id}}">
+					                    <img src="{{url('img/edit.png')}}" style="width: 20px">
+									</a>
+								</td>
 							</tr>
 							{{--*/ $i++ /*--}}
 							@endforeach
@@ -153,6 +154,7 @@
 								<th>ทีม</th>
 								<th>โซน</th>
 								<th>ที่ตั้ง</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -169,12 +171,7 @@
 										C{{ sprintf('%04u', $s->id) }}
 									</td>
 								@endif
-								<td class="w3-tooltip">
-									{{ $s->name}}
-									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/customer/store/')}}/{{$s->id}}">{{ $s->name}}</a>
-									</span>
-								</td>
+								<td>{{ $s->name}}</td>
 								<td class="w3-tooltip">
 									@if($s->addr_subdistrict) 
 										ตำบล{{ $s->addr_subdistrict }}
@@ -245,6 +242,11 @@
 				                    	<img src="{{url('img/noLocation.png')}}" alt="" style="width: 20px">
 									@endif
 								</td>
+								<td>
+									<a href="{{url('/customer/store/')}}/{{$s->id}}">
+					                    <img src="{{url('img/edit.png')}}" style="width: 20px">
+									</a>
+								</td>
 							</tr>
 							{{--*/ $i++ /*--}}
 							@endforeach
@@ -270,6 +272,7 @@
 								<th>ทีม</th>
 								<th>โซน</th>
 								<th>ที่ตั้ง</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -286,12 +289,7 @@
 										C{{ sprintf('%04u', $s->id) }}
 									</td>
 								@endif
-								<td class="w3-tooltip">
-									{{ $s->name}}
-									<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/customer/store/')}}/{{$s->id}}">{{ $s->name}}</a>
-									</span>
-								</td>
+								<td>{{ $s->name}}</td>
 								<td class="w3-tooltip">
 									@if($s->addr_subdistrict) 
 										ตำบล{{ $s->addr_subdistrict }}
@@ -360,6 +358,11 @@
 									@else
 				                    	<img src="{{url('img/noLocation.png')}}" alt="" style="width: 20px">
 									@endif
+								</td>
+								<td>
+									<a href="{{url('/customer/store/')}}/{{$s->id}}">
+					                    <img src="{{url('img/edit.png')}}" style="width: 20px">
+									</a>
 								</td>
 							</tr>
 							{{--*/ $i++ /*--}}

@@ -17,8 +17,8 @@
 							<th width="40%">ชื่อทีม</th>
 							<th width="100">วันที่สร้าง</th>
 							@if(Auth::user()->level != 'user')
-								<th width="50"></th>
-								<th width="50"></th>
+								<th width="50">แก้ไข</th>
+								<th width="50">ลบ</th>
 							@endif
 						</tr>
 					</thead>
@@ -27,18 +27,8 @@
 					@foreach($team as $teams)
 						<tr>
 							<td>{{$i}}</td>
-							<td class="w3-tooltip">
-								T{{ sprintf('%04u', $teams->id) }}
-								<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/team/member/')}}/{{$teams->id}}">T{{ sprintf('%04u', $teams->id) }}</a>
-								</span>
-							</td>
-							<td class="w3-tooltip">
-								{{$teams->name}}
-								<span class="w3-text w3-tag w3-blue" style="position:absolute;left:0;bottom:5px">
-									<a href="{{url('/team/member/')}}/{{$teams->id}}">{{$teams->name}}</a>
-								</span>
-							</td>
+							<td><a href="{{url('/team/member/')}}/{{$teams->id}}">T{{ sprintf('%04u', $teams->id) }}</a></td>
+							<td><a href="{{url('/team/member/')}}/{{$teams->id}}">{{$teams->name}}</a></td>
 							<td>{{$teams->created_at}}</td>
 							@if(Auth::user()->level != 'user')
 								<td>
