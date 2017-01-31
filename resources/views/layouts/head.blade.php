@@ -32,6 +32,7 @@
 		      		<a href="{{url('product')}}">บริหารจัดการสินค้า</a>
 		      		<a href="{{url('team')}}">บริหารจัดการทีม</a>
 		      		<a href="{{url('zone')}}">บริหารจัดการโซน</a>
+		      		<a href="{{url('customer/requestlist')}}">บริหารจัดการรายการ Request</a>
 		      		<!-- <a href="{{url('sales')}}">เพิ่มการซื้อ-ขาย</a> -->
 		    	</div>
 		    </li>

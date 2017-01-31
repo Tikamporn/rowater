@@ -7,7 +7,7 @@
 			<div class="w3-col m10 s10 w3-large">
 				<br><br>
 				<div class="w3-bottombar w3-border-blue">
-          <button onclick="document.getElementById('id02').style.display='block'" type="button" class="w3-btn w3-indigo w3-round-large w3-right">เลือกสินค้า</button>
+          <!-- <button onclick="document.getElementById('id02').style.display='block'" type="button" class="w3-btn w3-indigo w3-round-large w3-right">เลือกสินค้า</button> -->
 					<h2 class="w3-text-blue">ลงทะเบียนลูกค้า</h2>
 				</div>
 				<br>
@@ -154,6 +154,38 @@
                       </tr>
 					</table>
 					<br><br><br>
+
+          <div class="w3-panel w3-border w3-round-xlarge w3-border-blue">
+          <br><br>
+
+            <table class="w3-table">
+
+              <tr>
+                <td class="w3-right">เลือกสินค้า : </td>
+                <td>
+                    <select class="w3-select w3-border w3-left" name="product_id">
+                      <option value="" disabled selected>เลือกสินค้า</option>
+                      @foreach($product as $products)
+                        <option value="{{$products->id}}">{{$products->name}}</option>
+                      @endforeach
+                    </select>
+                </td>
+                <td class="w3-right">วันที่ : </td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_date" type="date"></td>
+              </tr>
+
+              <tr>
+                <td class="w3-right">จำนวน : </td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_amount" type="number"></td>
+
+                <td class="w3-right">ราคา : </td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_price" type="number"></td>
+              </tr>
+
+            </table>
+          <br><br>
+          </div>
+
           <div id="id02" class="w3-modal">
             <div class="w3-modal-content">
                 <div class="w3-container">

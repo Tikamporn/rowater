@@ -51,4 +51,9 @@ class CustomerRequestController extends Controller
             return view('customer.request',compact('data','product','result'));
         }
     }
+
+    public function index() {
+        $data = Customerrequest::where('status',1)->get();
+        return view('customer.requestlist',compact('data'));
+    }
 }

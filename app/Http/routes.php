@@ -48,6 +48,7 @@ Route::group(['middleware' => 'web'], function () {
         //Customer Request
         Route::get('customer/request','CustomerRequestController@request');
         Route::post('customer/requestAction','CustomerRequestController@requestAction');
+        Route::get('customer/requestlist','CustomerRequestController@index');
     });
 
     // ProductController

@@ -17,6 +17,8 @@ use App\Team;
 use App\Group;
 use App\Zone;
 
+use Carbon\Carbon;
+
 class CustomerController extends Controller
 {
 	public function __construct()
@@ -28,7 +30,8 @@ class CustomerController extends Controller
     	$customer = Customer::All();
         $vat = Customer::where('vat','!=','0')->get();
         $novat = Customer::where('vat','0')->get();
-    	return view('customer.show',compact('customer','vat','novat'));
+        $product = Product::All();
+    	return view('customer.show',compact('customer','vat','novat','product'));
     }
 
     public function create(){
@@ -79,7 +82,12 @@ class CustomerController extends Controller
             $amount = Input::get('amount');
             $price = Input::get('price');
 
-            $customer->product()->attach($product,['amount' => $amount],['day' => $date_delivery],['every' => $date_every],['price' => $price]);
+            $product_id = Input::get('product_id');
+            $product_date = Input::get('product_date');
+            $product_amount = Input::get('product_amount');
+            $product_price = Input::get('product_price');
+
+            $customer->product()->attach($product_id,['amount' => $product_amount],['day' => Carbon::parse($product_date)->format('d/m/Y')],['price' => $product_price]);
 
         	return redirect('customer/');
         }else{
