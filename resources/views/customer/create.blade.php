@@ -157,13 +157,11 @@
 
           <div class="w3-panel w3-border w3-round-xlarge w3-border-blue">
           <br><br>
-
             <table class="w3-table">
-
               <tr>
                 <td class="w3-right">เลือกสินค้า : </td>
                 <td>
-                    <select class="w3-select w3-border w3-left" name="product_id">
+                    <select class="w3-select w3-border w3-left" name="product_id" required>
                       <option value="" disabled selected>เลือกสินค้า</option>
                       @foreach($product as $products)
                         <option value="{{$products->id}}">{{$products->name}}</option>
@@ -171,15 +169,15 @@
                     </select>
                 </td>
                 <td class="w3-right">วันที่ : </td>
-                <td><input class="w3-border w3-round w3-input w3-left" name="product_date" type="date"></td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_date" type="date" required></td>
               </tr>
 
               <tr>
                 <td class="w3-right">จำนวน : </td>
-                <td><input class="w3-border w3-round w3-input w3-left" name="product_amount" type="number"></td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_amount" type="number" required></td>
 
                 <td class="w3-right">ราคา : </td>
-                <td><input class="w3-border w3-round w3-input w3-left" name="product_price" type="number"></td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_price" type="number" required></td>
               </tr>
 
             </table>

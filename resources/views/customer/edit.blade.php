@@ -194,6 +194,37 @@
             </tr>
 					</table>
 					<br><br><br>
+          <div class="w3-panel w3-border w3-round-xlarge w3-border-blue">
+          <br><br>
+            <table class="w3-table">
+              <tr>
+                <td class="w3-right">เลือกสินค้า : </td>
+                <td>
+                    <select class="w3-select w3-border w3-left" name="product_id">
+                      @if($product != null)
+                        <option value="{{$target[0]->pivot->product_id}}">{{$target[0]->name}}</option>
+                        @foreach($product as $products)
+                          @if($products->id != $target[0]->pivot->product_id)
+                            <option value="{{$products->id}}">{{$products->name}}</option>
+                          @endif
+                        @endforeach
+                      @endif
+                    </select>
+                </td>
+                <td class="w3-right">วันที่ : </td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_date" type="date" value="{{$target[0]->pivot->day}}" required></td>
+              </tr>
+
+              <tr>
+                <td class="w3-right">จำนวน : </td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_amount" type="number" value="{{$target[0]->pivot->amount}}" required></td>
+
+                <td class="w3-right">ราคา : </td>
+                <td><input class="w3-border w3-round w3-input w3-left" name="product_price" type="number" value="{{$target[0]->pivot->price}}" required></td>
+              </tr>
+            </table>
+          <br><br>
+          </div>
 				</div>
 				<div class="w3-col m4 s4"><p></p></div>
 				<div class="w3-col m4 s4">
