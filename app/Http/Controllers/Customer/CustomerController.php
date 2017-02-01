@@ -76,18 +76,12 @@ class CustomerController extends Controller
             $customer->ship_number = Input::get('shipnumber');
         	$customer->save();
 
-            $product = Input::get('product');
-            $date_delivery = Input::get('date_delivery');
-            $date_every = Input::get('date_every');
-            $amount = Input::get('amount');
-            $price = Input::get('price');
-
             $product_id = Input::get('product_id');
             $product_date = Input::get('product_date');
             $product_amount = Input::get('product_amount');
             $product_price = Input::get('product_price');
 
-            $customer->product()->attach($product_id,['amount' => $product_amount],['day' => Carbon::parse($product_date)->format('d/m/Y')],['price' => $product_price]);
+            $customer->product()->attach($product_id,['amount' => $product_amount, 'day' => $product_date ,'price' => $product_price]);
 
         	return redirect('customer/');
         }else{
