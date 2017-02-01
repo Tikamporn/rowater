@@ -21,24 +21,29 @@
 					  	</tr>
 				  	</thead>
 				  	<tbody>
-				  		{{--*/ $i=1 /*--}}
-				  		@foreach ($data as $s )
-					  	<tr>
-					  		<td>{{ $i }}</td>
-					      	<td>C{{ sprintf('%04u', $s->Customer->id) }}</td>
-					      	<td>{{ $s->Customer->name }}</td>
-					      	<td>{{ $s->Product->name}}</td>
-					      	<td>{{ $s->amount }}</td>
-					      	<td>
-					      		<a href="{{url('/customer/manage/')}}/{{$s->id}}">
-					                <img src="{{url('img/edit.png')}}" style="width: 20px">
-								</a>
-					      	</td>
-					    </tr>
-					    {{--*/ $i++ /*--}}
-					   	@endforeach
+				  		@if($data != '[]')
+					  		{{--*/ $i=1 /*--}}
+					  		@foreach ($data as $s )
+						  	<tr>
+						  		<td>{{ $i }}</td>
+						      	<td>C{{ sprintf('%04u', $s->Customer->id) }}</td>
+						      	<td>{{ $s->Customer->name }}</td>
+						      	<td>{{ $s->Product->name}}</td>
+						      	<td>{{ $s->amount }}</td>
+						      	<td>
+						      		<a href="{{url('/customer/manage/')}}/{{$s->id}}">
+						                <img src="{{url('img/edit.png')}}" style="width: 20px">
+									</a>
+						      	</td>
+						    </tr>
+						    {{--*/ $i++ /*--}}
+						   	@endforeach
+					   	@endif
 				    </tbody>
-				  </table>				
+				  </table>
+				  @if($data == '[]')
+				  	<p align="center">ไม่มีข้อมูล</p>		
+				  @endif		
 				  <br>
 			</div>
 			<div class="w3-col m2 s2" style="width:20%"><p></p></div>
