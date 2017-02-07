@@ -27,8 +27,8 @@
                 </tr>
             </table>    
             <br>
-            <button class="w3-btn w3-round w3-green w3-xlarge w3-padding-xlarge w3-left" name="submit">บันทึก</button>
-            <a href="{{ URL::previous() }}" class="w3-btn w3-round w3-red w3-xlarge w3-padding-xlarge w3-right" role="button">ย้อนกลับ</a>
+            <button class="w3-btn w3-round w3-green w3-large w3-padding-large w3-left" name="submit">บันทึก</button>
+            <a href="{{ URL::previous() }}" class="w3-btn w3-round w3-red w3-large w3-padding-large w3-right" role="button">ย้อนกลับ</a>
         </form>   
     </div>
     <div class="w3-col m4 s4"><p></p></div>

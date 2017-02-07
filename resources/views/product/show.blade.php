@@ -3,8 +3,8 @@
 <div class="w3-container">
 	<br><br>
 	<div class="w3-row w3-responsive">
-			<div class="w3-col m2 s2" style="width:20%"><p></p></div>
-			<div class="w3-col m8 s8" style="width:60%">
+			<div class="w3-col m2 s2"><p></p></div>
+			<div class="w3-col m8 s8">
 				<br>
 				<h3 class="w3-text-blue">บริหารจัดการสินค้า</h3>
 				<br>
@@ -28,7 +28,7 @@
 					      	<td>P{{ sprintf('%04u', $s->id) }}</td>
 					      	<td>{{ $s->name}}</td>
 					      	<td>
-					      		<div class="w3-progress-container">
+					      		<div class="w3-progress">
 								    @if($s->amount >= $s->amount_alert)
 									<div id="myBar" class="w3-center w3-text-white w3-green w3-round-xlarge" style="width:{{($s->amount/$s->amount_max)*100}}%">
 										&nbsp&nbsp{{$s->amount}}/{{$s->amount_max}}
@@ -56,7 +56,7 @@
 				  </table>				
 				  <br>
 			</div>
-			<div class="w3-col m2 s2" style="width:20%"><p></p></div>
+			<div class="w3-col m2 s2"><p></p></div>
 		</div>
 </div>
 @endsection
