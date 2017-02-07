@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 17, 2017 at 04:55 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Host: localhost
+-- Generation Time: Feb 07, 2017 at 05:45 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -36,6 +36,13 @@ CREATE TABLE `customerrequests` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `customerrequests`
+--
+
+INSERT INTO `customerrequests` (`id`, `customer_id`, `product_id`, `amount`, `status`, `created_at`, `updated_at`) VALUES
+(2, 26, 1, 10, 1, '2017-02-07 16:10:12', '2017-02-07 16:10:12');
+
 -- --------------------------------------------------------
 
 --
@@ -56,6 +63,7 @@ CREATE TABLE `customers` (
   `addr_postcode` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tel` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `pin` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `date` date NOT NULL,
   `zone_id` int(10) UNSIGNED DEFAULT NULL,
   `group_id` int(10) UNSIGNED DEFAULT NULL,
   `team_id` int(10) UNSIGNED DEFAULT NULL,
@@ -76,8 +84,9 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `addr_no`, `addr_village_no`, `addr_village`, `addr_road`, `addr_soi`, `addr_subdistrict`, `addr_district`, `addr_province`, `addr_postcode`, `tel`, `pin`, `zone_id`, `group_id`, `team_id`, `deposit_unit`, `ship_number`, `pay_date`, `price`, `status`, `vat`, `type`, `lat`, `long`, `created_at`, `updated_at`) VALUES
-(4, 'Tikamporn Kalpanluk', '58/21 Sriwichai road', '', '', '58/21 Sriwichai road', '', 'Muang', 'Muang', 'สุราษฎร์ธานี', '84000', '0950390427', NULL, 1, 1, 21, 0, '', '1', 0, '1', 0, 'cash', 1.12300000, 1.12300000, '2017-01-15 16:11:28', '2017-01-15 16:11:28');
+INSERT INTO `customers` (`id`, `name`, `addr_no`, `addr_village_no`, `addr_village`, `addr_road`, `addr_soi`, `addr_subdistrict`, `addr_district`, `addr_province`, `addr_postcode`, `tel`, `pin`, `date`, `zone_id`, `group_id`, `team_id`, `deposit_unit`, `ship_number`, `pay_date`, `price`, `status`, `vat`, `type`, `lat`, `long`, `created_at`, `updated_at`) VALUES
+(26, 'Tikamporn Kalpanluk', '73/27', '', 'ดีคอนโดครีก', '', '', 'กะทู้', 'กะทู้', 'ภูเก็ต', '83120', '0632291915', '0632291915', '2017-01-10', 1, 3, 21, 10, '', '1', 50, '1', 0, 'cash', 0.00000000, 0.00000000, '2017-02-07 15:59:41', '2017-02-07 15:59:41'),
+(28, 'วิศิษฏ์ ศรีมาลา', '73/28', '', 'ดีคอนโดครีก', '', '', 'กะทู้', 'กะทู้', 'ภูเก็ต', '83120', '0632291914', '0632291914', '2017-02-01', 13, 2, 22, 10, '', '1', 49, '1', 0, 'cash', 0.00000000, 0.00000000, '2017-02-07 16:06:17', '2017-02-07 16:06:17');
 
 -- --------------------------------------------------------
 
@@ -86,15 +95,19 @@ INSERT INTO `customers` (`id`, `name`, `addr_no`, `addr_village_no`, `addr_villa
 --
 
 CREATE TABLE `customer_product` (
-  `id` int(10) UNSIGNED NOT NULL,
   `customer_id` int(10) UNSIGNED NOT NULL,
   `product_id` int(10) UNSIGNED NOT NULL,
-  `day` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `amount` int(11) NOT NULL,
-  `price` decimal(10,0) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `customer_product`
+--
+
+INSERT INTO `customer_product` (`customer_id`, `product_id`, `created_at`, `updated_at`) VALUES
+(26, 1, '2017-02-07 15:59:41', '2017-02-07 15:59:41'),
+(28, 7, '2017-02-07 16:06:17', '2017-02-07 16:06:17');
 
 -- --------------------------------------------------------
 
@@ -111,10 +124,18 @@ CREATE TABLE `delivery_salses` (
   `remark` text COLLATE utf8_unicode_ci,
   `transaction_date` date DEFAULT NULL,
   `transaction_complete_datetime` datetime DEFAULT NULL,
-  `count_print` int(11) DEFAULT NULL,
+  `count_print` int(11) DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `delivery_salses`
+--
+
+INSERT INTO `delivery_salses` (`id`, `team_id`, `user_id`, `customer_id`, `status`, `remark`, `transaction_date`, `transaction_complete_datetime`, `count_print`, `created_at`, `updated_at`) VALUES
+(19, 21, NULL, 26, 0, NULL, '2017-02-07', NULL, 0, '2017-02-07 16:31:59', '2017-02-07 16:31:59'),
+(20, 22, NULL, 28, 0, NULL, '2017-02-07', NULL, 0, '2017-02-07 16:31:59', '2017-02-07 16:31:59');
 
 -- --------------------------------------------------------
 
@@ -337,7 +358,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `pin`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Wisit Srimala', 'palm.future@gmail.com', '$2y$10$xmyhI2QLEXqMgQdUQpT8uOjxYitsYN13uoZv0RKjf6qaJ3tl4v/D.', 552017, 'admin', 'nlsRpvkGlYQN6NuwJSfZUXa0m4so3baBmTb6pSoXuNNWuvODdnmD7C1vFvz6', '2017-01-15 16:04:45', '2017-01-15 16:04:45'),
+(1, 'Wisit Srimala', 'palm.future@gmail.com', '$2y$10$xmyhI2QLEXqMgQdUQpT8uOjxYitsYN13uoZv0RKjf6qaJ3tl4v/D.', 552017, 'admin', 'cGBvwKJaJ9bLNRDdQig0Ozu7si94cNzkAcA6SepAUEo1K9K9XJa4V3IjR4Pz', '2017-02-07 16:10:01', '2017-02-07 16:10:01'),
 (2, 'User', 'user@rowater.com', '$2y$10$.FIMazY/tpjnttmU2oYKIuzkgKnsiprHrX.5pGfCvW2AZz1CRPwPS', 13645, 'user', 'vVgo0yaqc28Ep57LJ4CmUP5Qj1g9V40SO2K4V5UD3fHjyhuuu4zq10e6KDnA', '2016-11-27 17:36:39', '2016-11-27 10:36:39'),
 (3, 'Staff', 'staff@rowater.com', '$2y$10$b5pbb88vzbbAV.DeWebR8.YKAwweE.syflUQyOJKR.hoTQc9hFN7y', 84546, 'staff', 'HkwO9fG1rlwGc6KEogNdAN4Mb3DfySg6VmENBJzwUKcSwS5VajLBLknd457s', '2016-09-22 05:33:34', '2016-04-26 09:22:09'),
 (4, 'Admin', 'admin@rowater.com', '$2y$10$FyaBhRPYPMgFSre9BqKJ1.ZUNOiutgUyuLVBBbsBAQxz.6MiCAVp6', 78564, 'admin', 'rpblMYiDNJTxx4x4z2wwayprv7fRJIBkghvXRp4QOdI8WrVSJCjI9JteMyaj', '2016-09-25 13:53:27', '2016-09-25 06:53:27'),
@@ -380,7 +401,8 @@ INSERT INTO `zones` (`id`, `name`, `detail`, `lat`, `long`, `created_at`, `updat
 (10, 'กะรน', 'F2', 0.00000000, 0.00000000, '2016-09-07 03:33:41', '0000-00-00 00:00:00'),
 (11, 'ป่าตอง', 'F3', 0.00000000, 0.00000000, '2016-09-07 03:33:41', '0000-00-00 00:00:00'),
 (12, 'กมลา', 'F4', 0.00000000, 0.00000000, '2016-09-07 03:33:41', '0000-00-00 00:00:00'),
-(13, 'กะทู้', 'D', 0.00000000, 0.00000000, '2016-09-07 03:33:41', '0000-00-00 00:00:00');
+(13, 'กะทู้', 'D', 0.00000000, 0.00000000, '2016-09-07 03:33:41', '0000-00-00 00:00:00'),
+(14, 'zone A', '', 0.00000000, 0.00000000, '2017-01-29 11:21:34', '2017-01-29 11:21:34');
 
 --
 -- Indexes for dumped tables
@@ -408,7 +430,6 @@ ALTER TABLE `customers`
 -- Indexes for table `customer_product`
 --
 ALTER TABLE `customer_product`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `id_customer` (`customer_id`,`product_id`),
   ADD KEY `customers_id_product_foreign` (`product_id`);
 
@@ -416,7 +437,9 @@ ALTER TABLE `customer_product`
 -- Indexes for table `delivery_salses`
 --
 ALTER TABLE `delivery_salses`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `team_id` (`team_id`),
+  ADD KEY `customer_id` (`customer_id`);
 
 --
 -- Indexes for table `groups`
@@ -487,22 +510,17 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `customerrequests`
 --
 ALTER TABLE `customerrequests`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `customer_product`
---
-ALTER TABLE `customer_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `delivery_salses`
 --
 ALTER TABLE `delivery_salses`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `groups`
 --
@@ -542,7 +560,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `zones`
 --
 ALTER TABLE `zones`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- Constraints for dumped tables
 --
@@ -568,6 +586,13 @@ ALTER TABLE `customers`
 ALTER TABLE `customer_product`
   ADD CONSTRAINT `customers_id_customer_foreign` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `customers_id_product_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `delivery_salses`
+--
+ALTER TABLE `delivery_salses`
+  ADD CONSTRAINT `delivery_salses_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `delivery_salses_ibfk_2` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `team_user`
