@@ -2,8 +2,8 @@
 @section('content')
 <div class="w3-container">
 	<div class="w3-row">
-		<div class="w3-col m1 s1" style="width:20%"><p></p></div>
-		<div class="w3-col l10 m10 s10" style="width:60%">
+		<div class="w3-col m1 s1"><p></p></div>
+		<div class="w3-col l10 m10 s10">
 			<br><br>
 			<div class="w3-responsive">
 				<h3 class="w3-text-blue">บริหารจัดการโซน</h3>
@@ -46,7 +46,7 @@
 					</tbody>
 				</table>
 			</div>
-		<div class="w3-col m1 s1" style="width:20%"><p></p></div>
+		<div class="w3-col m1 s1"><p></p></div>
 	</div>
 </div>
 @endsection

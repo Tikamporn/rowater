@@ -2,7 +2,7 @@
 @section('content')
 <div class="w3-row">
 	<div class="w3-col m4 s4"><p></p></div>
-	<div class="w3-col m4 s4 w3-round-xlarge">
+	<div class="w3-col m5 s5 w3-round-xlarge">
 		<br><br>
 		<h3 class="w3-text-blue">ลงทะเบียนโซน</h3>
 		<br>
