@@ -63,5 +63,7 @@ class ManagementController extends Controller
             }
             
         }
+
+        return redirect('management/list');
     }
 }
