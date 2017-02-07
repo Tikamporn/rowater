@@ -10,8 +10,7 @@
             <h3 class="w3-center">WELCOME TO RO :: WATER MANAGEMENT</h3>
         </div>
         <div class="w3-content w3-section" style="max-width:60%">
-            <img class="mySlides" src="{{url('img/img4.jpg')}}" style="width:100%">
-            <img class="mySlides" src="{{url('img/img5.jpg')}}" style="width:100%">
+            <img class="mySlides" src="{{url('img/icon.png')}}" style="width:100%">
         </div>
     </div>
     <div class="w3-col" style="width:20%"><p></p></div>
