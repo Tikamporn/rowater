@@ -42,7 +42,6 @@
 		    	<div class="w3-dropdown-content w3-white w3-card-4">
 		      		<!-- <a href="{{url('purchase')}}">รายงานการขาย</a> -->
 		      		<a href="{{url('customer/requestlist')}}">รายการ Request</a>
-		      		<a href="{{url('management/list')}}">รายการขนส่งประจำวัน</a>
 		    	</div>
 		    </li>
 		    
@@ -59,7 +58,7 @@
 		    </li>
 		    
 		    <li>
-		    	<a href="{{url('delivery')}}"><img src="{{url('/menu/car.png')}}" class="w3-round-small" alt="Norway" style="width:20px"> Delivery</a>
+		    	<a href="{{url('management/list')}}"><img src="{{url('/menu/car.png')}}" class="w3-round-small" alt="Norway" style="width:20px"> Delivery</a>
 		    </li>
 		    
 		    <li>
