@@ -19,7 +19,7 @@ class Customer extends Model
     }
 
     public function Product(){
-    	return $this->belongsToMany(Product::class)->withPivot('id','customer_id','product_id','day','amount','price')->withTimestamps();
+    	return $this->belongsToMany(Product::class)->withPivot('customer_id','product_id')->withTimestamps();
     }
 
     public function Custommerrequest(){

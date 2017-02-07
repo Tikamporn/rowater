@@ -2,8 +2,8 @@
 @section('content')
 <div class="w3-container">
 	<div class="w3-row">
-		<div class="w3-col m1 s1" style="width:20%"><p></p></div>
-		<div class="w3-col l10 m10 s12" style="width:60%">
+		<div class="w3-col m1 s1"><p></p></div>
+		<div class="w3-col l10 m10 s12">
 			<br><br>
 			<h3 class="w3-text-blue">บริหารจัดการลูกค้า</h3>
 			<a href="{{url('/customer/create')}}"><button class="w3-btn w3-round-large w3-blue w3-right">เพิ่มลูกค้า</button></a>
@@ -20,7 +20,7 @@
 
 			<br><br>
 
-			<div id="All" class="w3-container customer" style="display:block">
+			<div id="All" class="customer" style="display:block">
 				<div class="w3-responsive">
 					@if($customer != '[]')
 					<table class="w3-table-all w3-margin-top">
@@ -139,7 +139,7 @@
 				</div>
 			</div>
 
-			<div id="Vat" class="w3-container customer" style="display:none">
+			<div id="Vat" class="customer" style="display:none">
 				<div class="w3-responsive">
 					@if($vat != '[]')
 					<table class="w3-table-all w3-margin-top">
@@ -258,7 +258,7 @@
 				</div>
 			</div>
 
-			<div id="NoVat" class="w3-container customer" style="display:none">
+			<div id="NoVat" class="customer" style="display:none">
 				<div class="w3-responsive">
 					@if($novat != '[]')
 					<table class="w3-table-all w3-margin-top">
@@ -375,7 +375,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="w3-col m1 s1" style="width:20%"><p></p></div>
+		<div class="w3-col m1 s1"><p></p></div>
 	</div>
 </div>
 

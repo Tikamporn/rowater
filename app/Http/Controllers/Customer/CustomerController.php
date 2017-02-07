@@ -62,7 +62,8 @@ class CustomerController extends Controller
             $customer->addr_province = Input::get('addr_province');
         	$customer->addr_postcode = Input::get('addr_postcode');
             $customer->tel = Input::get('tel');
-        	$customer->pin = Input::get('tel');
+            $customer->pin = Input::get('tel');
+        	$customer->date = Input::get('product_date');
             $customer->status = Input::get('status');
         	$customer->zone_id = Input::get('zone');
         	$customer->group_id = Input::get('group');
@@ -77,11 +78,8 @@ class CustomerController extends Controller
         	$customer->save();
 
             $product_id = Input::get('product_id');
-            $product_date = Input::get('product_date');
-            $product_amount = Input::get('product_amount');
-            $product_price = Input::get('product_price');
 
-            $customer->product()->attach($product_id,['amount' => $product_amount, 'day' => $product_date ,'price' => $product_price]);
+            $customer->product()->attach($product_id);
 
         	return redirect('customer/');
         }else{
@@ -96,6 +94,7 @@ class CustomerController extends Controller
             $team = Team::All();
             $group = Group::All();
             $product = Product::All();
+
             $target = $customer->product()->get();
 
             return view('customer.edit',compact('zone','team','group','customer','product','target'));
@@ -119,6 +118,7 @@ class CustomerController extends Controller
             $customer->addr_postcode = Input::get('addr_postcode');
             $customer->tel = Input::get('tel');
             // $customer->pin = Input::get('tel');
+            $customer->date = Input::get('product_date');
             $customer->status = Input::get('status');
             $customer->zone_id = Input::get('zone');
             $customer->group_id = Input::get('group');
@@ -140,11 +140,8 @@ class CustomerController extends Controller
             }
 
             $product_id = Input::get('product_id');
-            $product_date = Input::get('product_date');
-            $product_amount = Input::get('product_amount');
-            $product_price = Input::get('product_price');
 
-            $customer->product()->attach($product_id,['amount' => $product_amount, 'day' => $product_date ,'price' => $product_price]);
+            $customer->product()->attach($product_id);
 
             return redirect('customer/');
         }else{

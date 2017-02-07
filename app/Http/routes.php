@@ -86,6 +86,15 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/zone/storeAction','ZoneController@storeAction');
         Route::get('/zone/delete/{id}','ZoneController@delete');
     });
+
+    // ManagementController
+    Route::group(['namespace' => 'Management'], function()
+    {
+        Route::get('/management/','ManagementController@index');
+        Route::get('/management/list','ManagementController@customerlist');
+        Route::post('/management/createAction','ManagementController@createAction');
+    });
+
 });
 
 
