@@ -51,7 +51,7 @@ class ManagementController extends Controller
 
     	foreach($customer_id as $index => $customer) 
         {
-            $check = Delivery_salses::where('customer_id','=',$customer)->first();
+            $check = Delivery_salses::where('customer_id','=',$customer)->where('transaction_date',$date)->first();
 
             if($check == null)
             {
@@ -60,6 +60,13 @@ class ManagementController extends Controller
                 $delivery->team_id = $team_id[$index];
                 $delivery->transaction_date = $date;
                 $delivery->save();
+
+                $customerrequest = Customerrequest::All();
+                foreach($customerrequest as $s)
+                {
+                    $s->status = 0;
+                    $s->save();
+                }
             }
             
         }

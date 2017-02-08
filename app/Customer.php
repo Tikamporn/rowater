@@ -25,4 +25,8 @@ class Customer extends Model
     public function Custommerrequest(){
         return $this->hasMany(Custommerrequest::class);
     }
+
+    public function Delivery_salses(){
+        return $this->belongsTo(Delivery_salses::class);
+    }
 }

@@ -95,6 +95,19 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/management/createAction','ManagementController@createAction');
     });
 
+    // MobileController
+    Route::group(['namespace' => 'Mobile'], function()
+    {
+        Route::post('/mobile/delivery','MobileController@delivery');
+        Route::post('/mobile/login','MobileController@login');
+        Route::post('/mobile/getzone','MobileController@getzone');
+        Route::post('/mobile/getgroup','MobileController@getgroup');
+        Route::post('/mobile/getproduct','MobileController@getproduct');
+        Route::post('/mobile/newcustomer','MobileController@newcustomer');
+        Route::post('/mobile/transaction','MobileController@transaction');
+        Route::post('/mobile/print','MobileController@print');
+    });
+
 });
 
 

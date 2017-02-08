@@ -13,4 +13,8 @@ class Delivery_salses extends Model
     public function Customer(){
         return $this->belongsTo(Customer::class);
     }
+
+    public function Product(){
+        return $this->hasMany(Product::class);
+    }
 }

@@ -13,4 +13,8 @@ class Product extends Model
     public function Customerrequest(){
     	return $this->hasMany(Customerrequest::class);
     }
+
+    public function Delivery_salses(){
+        return $this->belongsTo(Delivery_salses::class);
+    }
 }

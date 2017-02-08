@@ -3,6 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{{URL::asset('/css/w3.css')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	 <link rel="shortcut icon" href="{{{ asset('img/icon.png') }}}">
 	<script src="{{URL::asset('/js/jquery.js')}}"></script>
 	<script src="{{URL::asset('/js/bootstrap.js')}}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO25vTngmJLfE2Fhv2GjBAfsXihCneBME"></script>
@@ -54,7 +55,7 @@
 		    </li>
 		    
 		    <li>
-		    	<a href="{{url('purchase/request')}}"><img src="{{url('/menu/calendar.png')}}" class="w3-round-small" alt="Norway" style="width:20px"> Task</a>
+		    	<a href="{{url('#')}}"><img src="{{url('/menu/calendar.png')}}" class="w3-round-small" alt="Norway" style="width:20px"> Task</a>
 		    </li>
 		    
 		    <li>
