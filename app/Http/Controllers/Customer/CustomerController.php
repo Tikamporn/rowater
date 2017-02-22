@@ -153,4 +153,8 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
         return view('customer.map',compact('customer'));
     }
+
+    public function test() {
+        return view('customer.new');
+    }
 }

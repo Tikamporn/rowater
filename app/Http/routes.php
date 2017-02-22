@@ -41,6 +41,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/customer/store/{id}','CustomerController@store');
         Route::post('/customer/storeAction','CustomerController@storeAction');
         Route::get('/customer/location/{id}','CustomerController@location');
+
+        Route::get('/customer/test','CustomerController@test');
     });
 
     Route::group(['namespace' => 'CustomerRequest'], function()

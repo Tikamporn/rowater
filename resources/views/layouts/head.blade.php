@@ -3,10 +3,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{{URL::asset('/css/w3.css')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	 <link rel="shortcut icon" href="{{{ asset('img/icon.png') }}}">
+	<link rel="shortcut icon" href="{{{ asset('img/icon.png') }}}">
 	<script src="{{URL::asset('/js/jquery.js')}}"></script>
 	<script src="{{URL::asset('/js/bootstrap.js')}}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO25vTngmJLfE2Fhv2GjBAfsXihCneBME"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  	<script src="//code.angularjs.org/snapshot/angular.min.js"></script>
 
 	<div class="w3-responsive">
 		<ul class="w3-navbar w3-light-grey">

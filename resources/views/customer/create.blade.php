@@ -1,13 +1,53 @@
 @extends('layouts.app')
 @section('content')
+
+<script>
+
+  var app = angular.module('myApp', [], function($interpolateProvider) {
+    $interpolateProvider.startSymbol('[[');
+    $interpolateProvider.endSymbol(']]');
+  });
+
+  app.controller('StaticCtrl', AjaxCtrl );
+  app.controller('StaticCtrl', StaticCtrl );
+
+  function AjaxCtrl($scope) {
+    $scope.zones = ['กะทู้', 'เมือง'];
+    $scope.$watch('zone', function(newVal) {
+      if (newVal) $scope.teams = ['team1', 'team2'];
+    }); }
+
+  function StaticCtrl($scope) {
+    $scope.zones = {
+      'กะทู้': {
+        'team2': ['SOMA', 'Richmond', 'Sunset'],
+        'team3': ['Burbank', 'Hollywood']
+      },
+      'เมือง': {
+        'team1': ['igloo', 'cave'],
+        'team2': ['Phuket', 'Bangkok']
+      }
+    };
+  }
+
+  app.controller('myCtrl', function($scope) {
+      $scope.products = [
+        @foreach($product as $products)
+          {model : "{{ $products->name }}", price : "50"},
+        @endforeach
+      ];
+  });
+
+</script>
+
 <div class="w3-row">
 	<form class="w3-container" role="form" method="POST" action="{{ url('/customer/createAction') }}" accept-charset="utf-8" onsubmit="return confirm('Do you really want to submit the form?');">
 		 {!! csrf_field() !!}
 			<div class="w3-col m1 s1"><p></p></div>
-			<div class="w3-col m10 s10 w3-large">
+			<div class="w3-col m10 s10 w3-large" ng-app="myApp" ng-controller="StaticCtrl">
 				<br><br>
 				<div class="w3-bottombar w3-border-blue">
-          <!-- <button onclick="document.getElementById('id02').style.display='block'" type="button" class="w3-btn w3-indigo w3-round-large w3-right">เลือกสินค้า</button> -->
+          <button onclick="document.getElementById('id02').style.display='block'" type="button" class="w3-btn w3-indigo w3-round-large w3-right">เลือกสินค้า</button>
 					<h2 class="w3-text-blue">ลงทะเบียนลูกค้า</h2>
 				</div>
 				<br>
@@ -19,7 +59,7 @@
                           <td><input class="w3-border w3-round w3-input w3-left w3-blue" name="customer_id" type="text" value="C{{ sprintf('%04u', $customer+1) }}" readonly></td>
 
                           <td class="w3-right"><label class="w3-text-red"><b>*</b></label>ชื่อลูกค้า :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="name" type="text" required></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="name" type="text" placeholder="บริษัทขายดี" required></td>
                         </tr>
 
                         <tr>
@@ -87,26 +127,26 @@
                        </tr>  
 
                        <tr>
-                          <td class="w3-right">Deposit (Unit) :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="unit" type="text"></td>
+                          <td class="w3-right">มัดจำ (หน่วย) :</td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="unit" type="text" placeholder="10"></td>
 
-                          <td class="w3-right">Deposit (Baht) :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="price" type="text"></td>
+                          <td class="w3-right">มัดจำ (บาท) :</td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="price" type="text" placeholder="50"></td>
                         </tr>
 
                       <tr>
-                          <td class="w3-right">Vat :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="vat" type="number"></td></td>
-                          <td class="w3-right">Ship Number :</td>
-                          <td ><input class="w3-border w3-round w3-input w3-left" name="shipnumber" type="text"></td>
+                          <td class="w3-right">ภาษี :</td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="vat" type="number" placeholder="7"></td></td>
+                          <td class="w3-right">หมายเลขการส่ง :</td>
+                          <td ><input class="w3-border w3-round w3-input w3-left" name="shipnumber" type="text" placeholder="123456789"></td>
                       </tr>
 
                       <tr>
-                          <td class="w3-right">Latituge :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="latitude" type="text"></td>
+                          <td class="w3-right">ละติจูด :</td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="latitude" type="text" placeholder="7° 58' 17' N"></td>
 
-                          <td class="w3-right">Longitude :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="longtitude" type="text"></td>
+                          <td class="w3-right">ลองติจูด :</td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="longtitude" type="text" placeholder="98° 21' 4' E"></td>
                       </tr>
 					</table>
 					<br>
@@ -115,45 +155,139 @@
 					<table class="w3-table">
 						<tr>
                           <td class="w3-right">บ้านเลขที่ :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_no" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_no" type="text" placeholder="12/34"></td>
 
                           <td class="w3-right">หมู่ที่ :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_village_no" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_village_no" type="text" placeholder="2"></td>
                       </tr>
 
                       <tr>
                           <td class="w3-right">ชื่อหมู่บ้าน :</td>
-                          <td><input class="w3-border w3-round w3-input" name="addr_village" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input" name="addr_village" type="text" placeholder="หมู่บ้านแสนดี"></td>
 
                           <td class="w3-right">ตรอก/ซอย :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_soi" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_soi" type="text" placeholder="ซอย 8"></td>
                       </tr>
 
                       <tr>
                           <td class="w3-right">ถนน :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_road" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_road" type="text" placeholder="แสงดาว"></td>
 
                           <td class="w3-right">ตำบล/แขวง :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_subdistrict" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_subdistrict" type="text" placeholder="กะทู้"></td>
                       </tr>
 
                       <tr>
                           <td class="w3-right">อำเภอ/เขต :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_district" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_district" type="text" placeholder="กะทู้"></td>
 
                           <td class="w3-right">จังหวัด :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_province" type="text"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_province" type="text" placeholder="ภูเก็ต"></td>
                       </tr>
 
                       <tr>
                           <td class="w3-right">รหัสไปรษณีย์ :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_postcode" type="number"></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="addr_postcode" type="number" placeholder="83000"></td>
 
                           <td class="w3-right"><label class="w3-text-red"><b>*</b></label>เบอร์โทร :</td>
-                          <td><input class="w3-border w3-round w3-input w3-left" name="tel" type="number" required></td>
+                          <td><input class="w3-border w3-round w3-input w3-left" name="tel" type="number" placeholder="076XXXXXX" required></td>
                       </tr>
 					</table>
 					<br><br><br>
+
+          <div id="id02" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('id02').style.display='none'" class="w3-closebtn">&times;</span>
+                  <br><br>
+                    
+                  <div ng-app="myApp"> 
+                    <div ng-controller="myCtrl" ng-init="quantity=1;product.price=''" class="w3-container">
+                      <div class="w3-row">
+                        <div class="w3-col l2 m1 s1">
+                          <p></p>
+                        </div>
+                        <div class="w3-col l8 m10 s10">
+                            <div class="w3-panel w3-border w3-round-xlarge w3-border-blue" >
+                                <br><br>
+
+                                    <table class="w3-table">
+                                    <tr>
+                                      <td class="w3-right">เลือกสินค้า : </td>
+                                      <td>
+                                        <select class="w3-select w3-border w3-left" ng-model="product" ng-options="x.model for x in products" name="Product"></select>
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td class="w3-right">จำนวน : </td>
+                                      <td><input class="w3-border w3-round w3-input w3-left" ng-model="quantity" name="quantity" type="number"></td>
+                                    </tr>
+
+                                    <tr>
+                                      <td class="w3-right">ราคา : </td>
+                                      <td>[[product.price * quantity]]</td>
+                                    </tr>
+
+                                    <tr>
+                                      <td class="w3-right">วันที่ส่ง :</td>
+                                      <td><input type="date" name="date"></td>
+                                    </tr>
+
+                                    <tr>
+                                      <td class="w3-right">จัดส่ง  :</td>
+                                      <td>
+                                        <select class="w3-select w3-border w3-left" name="option">
+                                          <option value="" disabled selected>เลือกรอบการส่ง</option>
+                                          <option value="1">ทุก 7 วัน</option>
+                                          <option value="1">ทุก 15 วัน</option>
+                                          <option value="1">ทุก 1 เดือน</option>
+                                           </select></td>
+                                    </tr>
+                                    <tr>
+                                      <td></td>
+                                      <td><input type="submit" id="submit" value="Submit" class="w3-btn"/></td>
+                                    </tr>
+                                  </table>
+                                <br><br>
+                            </div>
+                        </div>
+                      </div>
+                    
+                    <br><br>
+                    
+                    
+                      <div class="w3-row">
+                        <div class="w3-col m1 s1"><p></p></div>
+                        <div class="w3-col m10 s10">
+                            <table class="w3-table w3-centered" border=1>
+                                <tr>
+                                    <th>สินค้า</th>
+                                    <th style="width: 10%">จำนวน</th>
+                                    <th style="width: 20%">วันที่จัดส่ง</th>
+                                    <th style="width: 20%">รอบการจัดส่ง</th>
+                                    <th style="width: 10%">ลบข้อมูล</th>
+                                </tr>
+                                <tr ng-repeat="company in companies">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="w3-col m1 s1"><p></p></div>
+                      </div>
+                  </div>  
+                </div>
+
+                  <br>
+
+                </div>
+            </div>
+          <br>
+        </div>
 
           <div class="w3-panel w3-border w3-round-xlarge w3-border-blue">
           <br><br>
